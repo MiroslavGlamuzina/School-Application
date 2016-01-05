@@ -117,7 +117,7 @@ public class Camera_Activity extends Activity implements OnClickListener {
 			}
 		}
 		File mediaFile;
-		String mImageName = Tools.getRandomFileName(this) + ".jpg";
+		String mImageName = Tools.getRandomFileName(this);
 		Database db = new Database(this);
 		db.updatePicture(mImageName, String.valueOf(MainActivity.CURRENT_ID));
 		mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
