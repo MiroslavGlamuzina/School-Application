@@ -10,6 +10,7 @@ import activity.MainActivity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 import database.Database;
@@ -171,4 +172,6 @@ public class Tools {
 		v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
 		v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
 	}
+
+	
 }

@@ -25,6 +25,7 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 	LinearLayout canvas;
 	Button btncolor_blue, btncolor_green, btncolor_red, btncolor_yellow, btncolor_white;
 	ImageButton btn_stroke1, btn_stroke2, btn_stroke3, btn_stroke4, btn_stroke5, btn_stroke6, btn_stroke7, btn_stroke8;
+	Button btn_save, btn_del;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 		paintView.requestFocus();
 		canvas = (LinearLayout) rootView.findViewById(R.id.canvas);
 		canvas.addView(paintView);
+
 		btncolor_blue = (Button) rootView.findViewById(R.id.colorbtn_blue);
 		btncolor_green = (Button) rootView.findViewById(R.id.colorbtn_green);
 		btncolor_red = (Button) rootView.findViewById(R.id.colorbtn_red);
@@ -47,6 +49,12 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 		btn_stroke6 = (ImageButton) rootView.findViewById(R.id.paint_size_six);
 		btn_stroke7 = (ImageButton) rootView.findViewById(R.id.paint_size_seven);
 		btn_stroke8 = (ImageButton) rootView.findViewById(R.id.paint_size_eight);
+
+		btn_save = (Button) rootView.findViewById(R.id.paint_save);
+		btn_del = (Button) rootView.findViewById(R.id.paint_del);
+
+		btn_save.setOnClickListener(this);
+		btn_del.setOnClickListener(this);
 
 		btn_stroke1.setOnClickListener(this);
 		btn_stroke2.setOnClickListener(this);
@@ -88,7 +96,9 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 			paintView.paint.setColor(Color.YELLOW);
 			paintView.color = Color.YELLOW;
 			break;
-
+		case R.id.paint_del:
+			paintView.clearCanvas();
+			break;
 		default:
 			break;
 		}
@@ -129,7 +139,6 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 			paintView.paint.setStrokeWidth(40f);
 			paintView.strokeWidth = 40f;
 			break;
-
 		default:
 			break;
 		}

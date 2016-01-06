@@ -12,6 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
+import notes.Notes_Camera_Fragment;
+import notes.Notes_Drawing_Fragment;
+import notes.Notes_Main_Fragment;
 
 public class PaintView extends View implements OnTouchListener {
 	private static final String TAG = "PaintView";
@@ -68,6 +71,10 @@ public class PaintView extends View implements OnTouchListener {
 			points.add(new ArrayList<Point>());
 		}
 		return true;
+	}
+
+	public void clearCanvas() {
+		points = new ArrayList<ArrayList<Point>>();
 	}
 }
 
