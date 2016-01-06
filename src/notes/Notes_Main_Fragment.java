@@ -1,20 +1,24 @@
 package notes;
 
 import com.example.schoolapp.R;
-
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
+import tools.Tools;
 
 public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 	private final String TAG = "Notes_Main_Fragment";
@@ -34,13 +38,27 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 
 		audio_btn.setOnClickListener(this);
 		camtoggle_btn.setOnClickListener(this);
+		addPhotoElement();
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addTextElement(
+				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		addPhotoElement();
 
-		addElement();
-		addElement();
-		addElement();
-		addElement();
-		addElement();
-		addElement();
 		return rootView;
 	}
 
@@ -68,18 +86,62 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		}
 	}
 
-	public void addElement() {
+	public void addTextElement(String val) {
 		LinearLayout item = new LinearLayout(getContext());
 		item.setBackgroundColor(Color.BLACK);
-		TableRow.LayoutParams params = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		params.setMargins(5, 5, 5, 5);
-		item.setLayoutParams(params);
+		item.setLayoutParams(setMargins());
 		item.setBackgroundResource(R.drawable.shape);
-			
 		TextView tv = new TextView(getContext());
-		tv.setText("this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
+		tv.setText(val);
 		item.addView(tv);
 		body.addView(item);
+	}
+
+	@SuppressLint("NewApi")
+	public void addPhotoElement() {
+		LinearLayout item = new LinearLayout(getContext());
+		item.setBackgroundColor(Color.BLACK);
+		item.setLayoutParams(setMargins());
+		item.setBackgroundResource(R.drawable.shape);
+
+		ImageView iv = new ImageView(getContext());
+		TableRow.LayoutParams params = new TableRow.LayoutParams(500, 500);
+		params.gravity = Gravity.CENTER_HORIZONTAL;
+
+		iv.setLayoutParams(params);
+		iv.setImageURI(Tools.getFileUriDEBUG(getContext()));
+		item.addView(iv);
+		body.addView(item);
+	}
+
+	public void addDrawElement() {
+		LinearLayout item = new LinearLayout(getContext());
+		item.setBackgroundColor(Color.BLACK);
+		item.setLayoutParams(setMargins());
+		item.setBackgroundResource(R.drawable.shape);
+
+	}
+
+	public void addVideoElement() {
+		LinearLayout item = new LinearLayout(getContext());
+		item.setBackgroundColor(Color.BLACK);
+		item.setLayoutParams(setMargins());
+		item.setBackgroundResource(R.drawable.shape);
+
+	}
+
+	public void addAudioElement() {
+		LinearLayout item = new LinearLayout(getContext());
+		item.setBackgroundColor(Color.BLACK);
+		item.setLayoutParams(setMargins());
+		item.setBackgroundResource(R.drawable.shape);
+
+	}
+
+	public TableRow.LayoutParams setMargins() {
+		TableRow.LayoutParams params = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		params.setMargins(5, 5, 5, 5);
+		return params;
 	}
 
 	@Override
