@@ -23,6 +23,7 @@ import android.widget.Toast;
 import database.Database;
 import tools.Tools;
 
+//add this to project notes
 public class Audio_Activity extends Activity implements OnClickListener {
 	Button start, stop, btntest;
 	TextView time;
