@@ -66,6 +66,8 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		// DEBUGGING
 		// DEBUGGING
 		// DEBUGGING
+		startActivity(new Intent(this, Notes_Activity.class));
+
 	}
 
 	public void addDescription() {
