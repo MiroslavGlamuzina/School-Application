@@ -6,6 +6,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.widget.Toast;
+import tools.Entry;
 import tools.Tools;
 
 public class Database {
@@ -42,10 +45,10 @@ public class Database {
 		values.put(DATE, date);
 		values.put(TITLE, title);
 		values.put(DESCRIPTION, Tools.getDateString() + Tools.HASH + description);
-		values.put(VIDEO, video);
-		values.put(AUDIO, audio);
-		values.put(DRAWING, drawing);
-		values.put(PICTURE, picture);
+		values.put(VIDEO, Tools.getDateString() + Tools.HASH + video);
+		values.put(AUDIO, Tools.getDateString() + Tools.HASH + audio);
+		values.put(DRAWING, Tools.getDateString() + Tools.HASH + drawing);
+		values.put(PICTURE, Tools.getDateString() + Tools.HASH + picture);
 		values.put(TAGS, tags);
 		return database.insert(TABLE, null, values);
 	}
@@ -448,4 +451,98 @@ public class Database {
 		dbHelper.onCreate(database);
 	}
 
+	public String getAllDEBUG(String id) {
+		String[] note = getDescription(id).split(Tools.HASH);
+		String[] video = getVideo(id).split(Tools.HASH);
+		String[] picture = getPicture(id).split(Tools.HASH);
+		String[] drawing = getDrawing(id).split(Tools.HASH);
+		String[] audio = getAudio(id).split(Tools.HASH);
+
+		// all into one
+		String res = "";
+		ArrayList<Entry> entries = new ArrayList<Entry>();
+		if (note.length > 1) {
+			res += "NOTES PASSED!! " + sizeDescription(id) + "\n";
+			for (int i = 0; i < note.length; i += 2) {
+				entries.add(new Entry(note[i], note[i + 1], Entry.NOTE));
+			}
+		} else {
+			res += "NOTES NOT PASSED! " + sizeDescription(id) + "\n";
+		}
+		if (video.length > 1) {
+			res += "VIDEO PASSED!! " + sizeVideo(id) + " \n";
+			for (int i = 0; i < video.length; i += 2) {
+				entries.add(new Entry(video[i], video[i + 1], Entry.VIDEO));
+			}
+		} else {
+			res += "VIDEO NOT PASSED! " + sizeVideo(id) + " \n";
+		}
+		if (picture.length > 1) {
+			res += "PICTURE PASSED!! " + sizePicture(id) + ", " + picture.length + "\n";
+			for (int i = 0; i < picture.length; i += 2) {
+				entries.add(new Entry(picture[i], picture[i + 1], Entry.PICTURE));
+			}
+		} else {
+			res += "PICTURE NOT PASSED! " + sizePicture(id) + ", " + picture.length + "\n";
+		}
+		if (drawing.length > 1) {
+			res += "DRAWING PASSED!! " + sizeDrawing(id) + "\n";
+			for (int i = 0; i < drawing.length; i += 2) {
+				entries.add(new Entry(drawing[i], drawing[i + 1], Entry.DRAWING));
+			}
+		} else {
+			res += "DRAWING NOT PASSED! " + sizeDrawing(id) + "\n";
+		}
+		if (audio.length > 1) {
+			res += "AUDIO PASSED!! " + sizeAudio(id) + "\n";
+			for (int i = 0; i < audio.length; i += 2) {
+				entries.add(new Entry(audio[i], audio[i + 1], Entry.AUDIO));
+			}
+		} else {
+			res += "AUDIO NOT PASSED! " + sizeAudio(id) + "\n";
+		}
+		for (int i = 0; i < entries.size(); i++) {
+			// Log.d(TAGS, entries.get(i).getDate() + ", " +
+			// entries.get(i).getVal() + ", " + entries.get(i).getType());
+			res += entries.get(i).getDate() + ", " + entries.get(i).getVal() + ", " + entries.get(i).getType() + "\n";
+		}
+		return res;
+	}
+
+	public ArrayList<Entry> getAll(String id) {
+		String[] note = getDescription(id).split(Tools.HASH);
+		String[] video = getVideo(id).split(Tools.HASH);
+		String[] picture = getPicture(id).split(Tools.HASH);
+		String[] drawing = getDrawing(id).split(Tools.HASH);
+		String[] audio = getAudio(id).split(Tools.HASH);
+
+		// all into one
+		ArrayList<Entry> entries = new ArrayList<Entry>();
+		if (note.length > 1) {
+			for (int i = 0; i < note.length; i += 2) {
+				entries.add(new Entry(note[i], note[i + 1], Entry.NOTE));
+			}
+		}
+		if (video.length > 1) {
+			for (int i = 0; i < video.length; i += 2) {
+				entries.add(new Entry(video[i], video[i + 1], Entry.VIDEO));
+			}
+		}
+		if (picture.length > 1) {
+			for (int i = 0; i < picture.length; i += 2) {
+				entries.add(new Entry(picture[i], picture[i + 1], Entry.PICTURE));
+			}
+		}
+		if (drawing.length > 1) {
+			for (int i = 0; i < drawing.length; i += 2) {
+				entries.add(new Entry(drawing[i], drawing[i + 1], Entry.DRAWING));
+			}
+		}
+		if (audio.length > 1) {
+			for (int i = 0; i < audio.length; i += 2) {
+				entries.add(new Entry(audio[i], audio[i + 1], Entry.AUDIO));
+			}
+		}
+		return entries;
+	}
 }

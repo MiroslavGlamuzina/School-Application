@@ -13,6 +13,10 @@ import android.content.ContextWrapper;
 import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TableRow;
 import android.widget.Toast;
 import database.Database;
 
@@ -23,6 +27,20 @@ public class Tools {
 	 * Value to split Database entries and values DateTime() + HASH + Entry()
 	 */
 	public static final String HASH = " qwerqwer ";
+	public static final String FLAG = " iuoyiouy ";
+
+	/**
+	 * <b> setMargins()</b></br>
+	 * 
+	 * @return Margins used to display content on the Notes_Main_Fragment and
+	 *         the Lecture_Review activities.
+	 */
+	public static TableRow.LayoutParams setMargins() {
+		TableRow.LayoutParams params = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		params.setMargins(5, 5, 5, 5);
+		return params;
+	}
+
 
 	/**
 	 * <b>getFileUriDEBUG(Context c)</b></br>

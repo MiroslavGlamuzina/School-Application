@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		addDescription();
+		addNote();
 		et = (EditText) this.findViewById(R.id.et);
 		etbtnpaint = (Button) this.findViewById(R.id.etbtnpaint);
 		etbtncamera = (Button) this.findViewById(R.id.etbtncamera);
@@ -70,7 +70,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 
 	}
 
-	public void addDescription() {
+	public void addNote() {
 		ll_scrollView = (LinearLayout) this.findViewById(R.id.scrollview_linearlayout);
 		tv = new TextView(this);
 		String edittext = "";
@@ -91,7 +91,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		}
 	}
 
-	public void removeDescription() {
+	public void removeNote() {
 		ll_scrollView = (LinearLayout) this.findViewById(R.id.scrollview_linearlayout);
 		tv = new TextView(this);
 		String edittext = "";
@@ -114,7 +114,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.etbtn:
-			addDescription();
+			addNote();
 			break;
 		case R.id.etbtnpaint:
 //			startActivity(new Intent(this, Paint_Activity.class));
@@ -154,7 +154,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			startActivity(new Intent(this, Notes_Activity.class));
 			break;
 		case R.id.etbtntest:
-			removeDescription();
+			removeNote();
 			break;
 		default:
 			break;

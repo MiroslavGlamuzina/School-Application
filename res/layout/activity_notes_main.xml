@@ -47,17 +47,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="80"
-        android:padding="5dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="5dp" >
 
         <ScrollView
+            android:id="@+id/notes_scrollview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true" >
 
             <LinearLayout
                 android:id="@+id/notes_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
                 android:orientation="vertical" >
             </LinearLayout>
         </ScrollView>
@@ -72,13 +75,16 @@
         android:weightSum="10" >
 
         <EditText
+            android:id="@+id/notes_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:focusable="false"
-            android:hint="+Add a Comment" />
+            android:hint="+Add a Comment"
+            android:text="asd" />
 
         <Button
+            android:id="@+id/notes_submit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
