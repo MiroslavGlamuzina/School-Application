@@ -84,7 +84,6 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 
 	@Override
 	public void onClick(View v) {
-
 		switch (v.getId()) {
 		case R.id.colorbtn_blue:
 			paintView.paint.setColor(Color.BLUE);
@@ -163,6 +162,9 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 	public void saveDrawing() {
 		Bitmap bitmap = paintView.getBitmap();
 		saveExternal(bitmap);
+		Notes_Main_Fragment.savedDrawing = true;
+		//return to other screen
+		Tools.backButton(canvas);
 	}
 
 	private void saveExternal(Bitmap image) {

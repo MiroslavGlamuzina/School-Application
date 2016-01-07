@@ -26,7 +26,8 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
-            android:text="School App" />
+            android:id="@+id/notes_lecturetitle"
+            android:text="Untitled Lecture" />
 
         <Button
             android:id="@+id/notes_camtoggle"
@@ -81,7 +82,7 @@
             android:layout_weight="8"
             android:focusable="false"
             android:hint="+Add a Comment"
-            android:text="asd" />
+            android:text="asasjkhdjkgfajksgdjfkagsjkddd" />
 
         <Button
             android:id="@+id/notes_submit"

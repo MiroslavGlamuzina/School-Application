@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.LayoutDirection;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ import database.Database;
 import tools.Entry;
 import tools.Tools;
 
+@SuppressLint("RtlHardcoded")
 public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 	private final String TAG = "Notes_Main_Fragment";
 	public static Boolean isStarted = false;
@@ -38,6 +40,9 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 	public static boolean isCamera = true;
 	public static boolean isRecording = true;
 	public static boolean takenPhoto = false;
+	public static boolean savedDrawing = false;
+	
+	TextView lecture_title;
 	Button camtoggle_btn, audio_btn, submit_btn;
 	EditText note_et;
 	ScrollView scroll;
@@ -52,16 +57,19 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		submit_btn = (Button) rootView.findViewById(R.id.notes_submit);
 		note_et = (EditText) rootView.findViewById(R.id.notes_et);
 		scroll = (ScrollView) rootView.findViewById(R.id.notes_scrollview);
-
+		lecture_title = (TextView)rootView.findViewById(R.id.notes_lecturetitle);
+		
+		Database db = new Database(getContext());
+		db.updateTitle("Biology Lecture 1", Tools.getCurrentID());
+		lecture_title.setText(db.getTitle(Tools.getCurrentID()));
+		
 		submit_btn.setOnClickListener(this);
 		audio_btn.setOnClickListener(this);
 		camtoggle_btn.setOnClickListener(this);
 
-		addAudioElement();
-
 		// The following block of code will grab the sorted arraylist from the
 		// database to repopulated the page after close..!!!
-		DEBUGGING();
+		// DEBUGGING();
 		populateBody();
 
 		return rootView;
@@ -71,39 +79,56 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		Database db = new Database(getContext());
 		ArrayList<Entry> temp = Entry.sortEntries(db.getAll("1"));
 		String res = "";
-		 for (int i = 0; i < temp.size(); i++) {
-		 res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " +
-		 temp.get(i).getType() + "\n";
-		 }
-		 addTextElement(res);
+		for (int i = 0; i < temp.size(); i++) {
+			res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " + temp.get(i).getType() + "\n";
+		}
+		addTextElement(res);
 	}
 
 	public void populateBody() {
-		Database db = new Database(getContext());
-		ArrayList<Entry> list = Entry.sortEntries(db.getAll("1"));
-		String note_temp = "";
-		addTextElement("testing!!");
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getType().equals(new String(Entry.NOTE))) {
-				note_temp += list.get(i).getVal() + "\n";
-			} else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
-				if (!note_temp.equals(new String(""))) {
-					addTextElement(note_temp);
-					note_temp = "";
+		body.removeAllViews();
+		addAudioElement();// debugging
+		getActivity().runOnUiThread(new Runnable() {
+			public void run() {
+				Database db = new Database(getContext());
+				ArrayList<Entry> list = Entry.sortEntries(db.getAll("1"));
+				String note_temp = "";
+				addTextElement("testing!!");
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).getType().equals(new String(Entry.NOTE))) {
+						note_temp += list.get(i).getVal() + "\n";
+					} else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+						if (!note_temp.equals(new String(""))) {
+							addTextElement(note_temp);
+							note_temp = "";
+						}
+						addPhotoElement(
+								Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
+					} else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
+						if (!note_temp.equals(new String(""))) {
+							addTextElement(note_temp);
+							note_temp = "";
+						}
+						addPhotoElement(
+								Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
+					} else if (!note_temp.equals(new String(""))) {
+						addTextElement(note_temp.substring(0, note_temp.length() - 2));
+						note_temp = "";
+					}
+					// addPhotoElement(Uri.parse(list.get(i).getVal()));
+					try {
+						wait(50);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-				addPhotoElement(Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
-			} else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
-				if (!note_temp.equals(new String(""))) {
-					addTextElement(note_temp);
-					note_temp = "";
-				}
-				addPhotoElement(Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
-			} else if (!note_temp.equals(new String(""))) {
-				addTextElement(note_temp.substring(0, note_temp.length() - 2));
-				note_temp = "";
 			}
-			// addPhotoElement(Uri.parse(list.get(i).getVal()));
-		}
+		});
+	}
+
+	public void test() {
+
 	}
 
 	@Override
@@ -126,14 +151,14 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 			}
 			break;
 		case R.id.notes_submit:
-			addNote();
+			insertNote();
 			break;
 		default:
 			break;
 		}
 	}
 
-	public void addNote() {
+	public void insertNote() {
 		TextView tv = new TextView(getContext());
 		String edittext = "";
 		edittext = note_et.getText().toString();
@@ -146,25 +171,23 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		addTextElement(edittext);
 	}
 
+	@SuppressLint("NewApi")
 	public void addTextElement(String val) {
 		LinearLayout item = new LinearLayout(getContext());
 		item.setBackgroundColor(Color.BLACK);
 		item.setLayoutParams(Tools.setMargins());
 		item.setBackgroundResource(R.drawable.shape);
+		TableRow.LayoutParams item_params = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+//		item_params.gravity =Gravity.LEFT;
+		item.setLayoutParams(item_params);
+
 		TextView tv = new TextView(getContext());
 		tv.setText(val);
 		item.addView(tv);
 		body.addView(item);
-		scrollDown();
-	}
 
-	public void scrollDown() {
-		scroll.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				scroll.fullScroll(View.FOCUS_DOWN);
-			}
-		}, 250);
+		scrollDown();
 	}
 
 	@SuppressLint("NewApi")
@@ -173,15 +196,19 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		item.setBackgroundColor(Color.BLACK);
 		item.setLayoutParams(Tools.setMargins());
 		item.setBackgroundResource(R.drawable.shape);
+		TableRow.LayoutParams item_params = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+//		item_params.gravity =Gravity.RIGHT;
+		item.setLayoutParams(item_params);
+		item.setPadding(-20, 40, -20, 40);
 
 		ImageView iv = new ImageView(getContext());
-		TableRow.LayoutParams params = new TableRow.LayoutParams(500, 500);
-		params.gravity = Gravity.CENTER_HORIZONTAL;
-
-		iv.setLayoutParams(params);
+		TableRow.LayoutParams iv_params = new TableRow.LayoutParams(500, 500);
+		iv.setLayoutParams(iv_params);
 		iv.setImageURI(imgUri);
 		item.addView(iv);
 		body.addView(item);
+
 	}
 
 	public void addDrawElement() {
@@ -226,6 +253,15 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 
 	}
 
+	public void scrollDown() {
+		scroll.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				scroll.fullScroll(View.FOCUS_DOWN);
+			}
+		}, 250);
+	}
+
 	@Override
 	public void onStart() {
 		super.onStart();
@@ -245,6 +281,10 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		isVisible = isVisibleToUser;
 		if (isVisibleToUser && takenPhoto) {
 			takenPhoto = false;
+			populateBody();
+		}
+		if (isVisibleToUser && savedDrawing) {
+			savedDrawing = false;
 			populateBody();
 		}
 		if (isStarted && isVisible) {
