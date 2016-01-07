@@ -518,28 +518,28 @@ public class Database {
 
 		// all into one
 		ArrayList<Entry> entries = new ArrayList<Entry>();
-		if (note.length > 1) {
-			for (int i = 0; i < note.length; i += 2) {
+		if (note.length > 2) {
+			for (int i = 2; i < note.length; i += 2) {
 				entries.add(new Entry(note[i], note[i + 1], Entry.NOTE));
 			}
 		}
-		if (video.length > 1) {
-			for (int i = 0; i < video.length; i += 2) {
+		if (video.length > 2) {
+			for (int i = 2; i < video.length; i += 2) {
 				entries.add(new Entry(video[i], video[i + 1], Entry.VIDEO));
 			}
 		}
-		if (picture.length > 1) {
-			for (int i = 0; i < picture.length; i += 2) {
+		if (picture.length > 2) {
+			for (int i = 2; i < picture.length; i += 2) {
 				entries.add(new Entry(picture[i], picture[i + 1], Entry.PICTURE));
 			}
 		}
-		if (drawing.length > 1) {
-			for (int i = 0; i < drawing.length; i += 2) {
+		if (drawing.length > 2) {
+			for (int i = 2; i < drawing.length; i += 2) {
 				entries.add(new Entry(drawing[i], drawing[i + 1], Entry.DRAWING));
 			}
 		}
-		if (audio.length > 1) {
-			for (int i = 0; i < audio.length; i += 2) {
+		if (audio.length > 2) {
+			for (int i = 2; i < audio.length; i += 2) {
 				entries.add(new Entry(audio[i], audio[i + 1], Entry.AUDIO));
 			}
 		}

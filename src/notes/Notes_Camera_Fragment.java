@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -90,6 +91,7 @@ public class Notes_Camera_Fragment extends Fragment {
 		Database db = new Database(getContext());
 		db.updatePicture(mImageName, String.valueOf(MainActivity.CURRENT_ID));
 		mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
+		Notes_Main_Fragment.takenPhoto = true;
 		return mediaFile;
 	}
 

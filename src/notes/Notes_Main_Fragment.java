@@ -1,5 +1,6 @@
 package notes;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import com.example.schoolapp.R;
@@ -35,6 +36,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 	public static Boolean isVisible = false;
 	public static boolean isCamera = true;
 	public static boolean isRecording = true;
+	public static boolean takenPhoto = false; 
 	Button camtoggle_btn, audio_btn, submit_btn;
 	EditText note_et;
 	ScrollView scroll;
@@ -55,23 +57,43 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		camtoggle_btn.setOnClickListener(this);
 
 		addAudioElement();
-		// addPhotoElement(Tools.getFileUriDEBUG(getContext()));
-		addTextElement(
-				"this is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an elementthis is an element");
-		// addPhotoElement(Tools.getFileUriDEBUG(getContext()));
 
-		
-		//The following block of code will grab the sorted arraylist from the database to repopulated the page after close..!!!
+		// The following block of code will grab the sorted arraylist from the
+		// database to repopulated the page after close..!!!
 		Database db = new Database(getContext());
-		addTextElement(db.getAllDEBUG("1"));
 		ArrayList<Entry> temp = Entry.sortEntries(db.getAll("1"));
 		String res = "";
-		for (int i = 0; i < temp.size(); i++) {
-			res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " + temp.get(i).getType() + "\n";
-		}
-		addTextElement(res);
+		// for (int i = 0; i < temp.size(); i++) {
+		// res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " +
+		// temp.get(i).getType() + "\n";
+		// }
+		// addTextElement(db.getAllDEBUG("1"));
+		// addTextElement(res);
+		populateBody();
 
 		return rootView;
+	}
+
+	public void populateBody() {
+		Database db = new Database(getContext());
+		ArrayList<Entry> list = Entry.sortEntries(db.getAll("1"));
+		String note_temp = "";
+		addTextElement("testing!!");
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getType().equals(new String(Entry.NOTE))) {
+				note_temp += list.get(i).getVal() + "\n";
+			} else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+				if (!note_temp.equals(new String(""))) {
+					addTextElement(note_temp);
+					note_temp = "";
+				}
+				addPhotoElement(Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
+			} else if (!note_temp.equals(new String(""))) {
+				addTextElement(note_temp.substring(0, note_temp.length() - 2));
+				note_temp = "";
+			}
+			// addPhotoElement(Uri.parse(list.get(i).getVal()));
+		}
 	}
 
 	@Override
@@ -119,7 +141,6 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		item.setBackgroundColor(Color.BLACK);
 		item.setLayoutParams(Tools.setMargins());
 		item.setBackgroundResource(R.drawable.shape);
-
 		TextView tv = new TextView(getContext());
 		tv.setText(val);
 		item.addView(tv);
@@ -212,6 +233,10 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		Notes_Camera_Fragment.isVisible = false;
 		Notes_Camera_Fragment.isStarted = false;
 		isVisible = isVisibleToUser;
+		if(isVisibleToUser && takenPhoto){
+			takenPhoto = false;
+			populateBody();
+		}
 		if (isStarted && isVisible) {
 			isActive();
 		}
