@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.net.Uri;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
@@ -40,7 +41,6 @@ public class Tools {
 		params.setMargins(5, 5, 5, 5);
 		return params;
 	}
-
 
 	/**
 	 * <b>getFileUriDEBUG(Context c)</b></br>
@@ -364,6 +364,11 @@ public class Tools {
 	public static void backButton(View v) {
 		v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
 		v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
+	}
+
+	public static void pressView(View v, int x, int y) {
+		v.dispatchTouchEvent(MotionEvent.obtain(50, 50, MotionEvent.ACTION_DOWN, x, y, 0));
+		v.dispatchTouchEvent(MotionEvent.obtain(5, 50, MotionEvent.ACTION_UP, x, y, 0));
 	}
 
 }

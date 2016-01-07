@@ -11,7 +11,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Window;
 import notes.AnimationTransition1;
 import notes.Notes_Camera_Fragment;
 import notes.Notes_Drawing_Fragment;
@@ -26,6 +26,7 @@ public class Notes_Activity extends FragmentActivity implements OnClickListener 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_notes_viewpager);
 
 		mPager = (ViewPager) findViewById(R.id.pager);

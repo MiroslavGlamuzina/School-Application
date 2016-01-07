@@ -42,7 +42,7 @@ public class Entry {
 	}
 
 	public static ArrayList<Entry> sortEntries(ArrayList<Entry> list) {
-		ArrayList<Integer> toremove = new ArrayList<Integer>();
+		ArrayList<Integer> toRemove = new ArrayList<Integer>();
 		Entry temp = new Entry("", "", "");
 		for (int i = 0; i < list.size(); i++) {
 			for (int z = i + 1; z < list.size(); z++) {

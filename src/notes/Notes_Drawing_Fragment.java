@@ -1,7 +1,16 @@
 package notes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import com.example.schoolapp.R;
 
+import activity.MainActivity;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,8 +22,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+import database.Database;
 import helpers.PaintView;
+import tools.Tools;
 
 public class Notes_Drawing_Fragment extends Fragment implements OnClickListener {
 	private final String TAG = "Notes_Drawing_Fragment";
@@ -98,6 +108,12 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 			break;
 		case R.id.paint_del:
 			paintView.clearCanvas();
+			canvas.requestFocus();
+			Tools.pressView(canvas, 100, 100);
+			// Tools.backButton(canvas);
+			break;
+		case R.id.paint_save:
+			saveDrawing();
 			break;
 		default:
 			break;
@@ -144,6 +160,39 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 		}
 	}
 
+	public void saveDrawing() {
+		Bitmap bitmap = paintView.getBitmap();
+		saveExternal(bitmap);
+	}
+
+	private void saveExternal(Bitmap image) {
+		File pictureFile = saveInternal();
+		if (pictureFile == null) {
+			Log.d("SaveImage(); ", "Error creating media file, check storage permissions: ");// e.getMessage());
+			return;
+		}
+		try {
+			FileOutputStream fos = new FileOutputStream(pictureFile);
+			image.compress(Bitmap.CompressFormat.PNG, 90, fos);
+			fos.close();
+		} catch (FileNotFoundException e) {
+			Log.d("SaveImage(); ", "File not found: " + e.getMessage());
+		} catch (IOException e) {
+			Log.d("SaveImage(); ", "Error accessing file: " + e.getMessage());
+		}
+	}
+
+	public File saveInternal() {
+		ContextWrapper cw = new ContextWrapper(getContext());
+		File mediaStorageDir = cw.getDir("", Context.MODE_PRIVATE);
+		File mediaFile;
+		String mImageName = Tools.getFileNameDrawing();
+		Database db = new Database(getContext());
+		db.updateDrawing(mImageName, String.valueOf(MainActivity.CURRENT_ID));
+		mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
+		return mediaFile;
+	}
+
 	@Override
 	public void onStart() {
 		super.onStart();
@@ -168,6 +217,6 @@ public class Notes_Drawing_Fragment extends Fragment implements OnClickListener 
 
 	public void isActive() {
 		Log.d(TAG, "shown!");
-
 	}
+
 }

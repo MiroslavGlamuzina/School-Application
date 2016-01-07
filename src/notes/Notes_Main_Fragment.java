@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,7 +37,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 	public static Boolean isVisible = false;
 	public static boolean isCamera = true;
 	public static boolean isRecording = true;
-	public static boolean takenPhoto = false; 
+	public static boolean takenPhoto = false;
 	Button camtoggle_btn, audio_btn, submit_btn;
 	EditText note_et;
 	ScrollView scroll;
@@ -60,18 +61,21 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 
 		// The following block of code will grab the sorted arraylist from the
 		// database to repopulated the page after close..!!!
-		Database db = new Database(getContext());
-		ArrayList<Entry> temp = Entry.sortEntries(db.getAll("1"));
-		String res = "";
-		// for (int i = 0; i < temp.size(); i++) {
-		// res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " +
-		// temp.get(i).getType() + "\n";
-		// }
-		// addTextElement(db.getAllDEBUG("1"));
-		// addTextElement(res);
+		DEBUGGING();
 		populateBody();
 
 		return rootView;
+	}
+
+	private void DEBUGGING() {
+		Database db = new Database(getContext());
+		ArrayList<Entry> temp = Entry.sortEntries(db.getAll("1"));
+		String res = "";
+		 for (int i = 0; i < temp.size(); i++) {
+		 res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " +
+		 temp.get(i).getType() + "\n";
+		 }
+		 addTextElement(res);
 	}
 
 	public void populateBody() {
@@ -83,6 +87,12 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 			if (list.get(i).getType().equals(new String(Entry.NOTE))) {
 				note_temp += list.get(i).getVal() + "\n";
 			} else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+				if (!note_temp.equals(new String(""))) {
+					addTextElement(note_temp);
+					note_temp = "";
+				}
+				addPhotoElement(Uri.fromFile(new File(Tools.getContextWrapperDir(getContext()), list.get(i).getVal())));
+			} else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
 				if (!note_temp.equals(new String(""))) {
 					addTextElement(note_temp);
 					note_temp = "";
@@ -233,7 +243,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		Notes_Camera_Fragment.isVisible = false;
 		Notes_Camera_Fragment.isStarted = false;
 		isVisible = isVisibleToUser;
-		if(isVisibleToUser && takenPhoto){
+		if (isVisibleToUser && takenPhoto) {
 			takenPhoto = false;
 			populateBody();
 		}

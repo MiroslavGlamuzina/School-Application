@@ -2,8 +2,9 @@ package helpers;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -12,9 +13,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
-import notes.Notes_Camera_Fragment;
-import notes.Notes_Drawing_Fragment;
-import notes.Notes_Main_Fragment;
 
 public class PaintView extends View implements OnTouchListener {
 	private static final String TAG = "PaintView";
@@ -75,6 +73,19 @@ public class PaintView extends View implements OnTouchListener {
 
 	public void clearCanvas() {
 		points = new ArrayList<ArrayList<Point>>();
+	}
+
+	@SuppressLint("NewApi")
+	public Bitmap getBitmap() {
+		// this.measure(100, 100);
+		// this.layout(0, 0, 100, 100);
+		 Bitmap.Config conf = Bitmap.Config.ARGB_8888; 
+		this.setDrawingCacheEnabled(true);
+		this.buildDrawingCache();
+		this.setBackgroundColor(Color.WHITE);	
+		Bitmap bmp = Bitmap.createBitmap(this.getDrawingCache());
+		this.setDrawingCacheEnabled(false);
+		return bmp;
 	}
 }
 
