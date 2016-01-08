@@ -149,7 +149,6 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			}
 			break;
 		case R.id.etbtnlecture:
-			// startActivity(new Intent(this, Notes_Activity.class));
 			Tools.startActivity(this, Notes_Activity.class);
 			break;
 		case R.id.etbtntest:
