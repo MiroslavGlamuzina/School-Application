@@ -25,14 +25,13 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	public static LinearLayout ll_main, ll_scrollView, ll_db;
 	public static EditText et;
 	public static Button etbtn, etbtnpaint, etbtncamera, etbtnfiles, etbtnDB, etbtndeletedb, etbtntest, etbtnaudio,
-			etbtnlecture;
+			etbtnlecture, etbtnmenu;
 	public static ScrollView scrollView, db_scrollview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		addNote();
+		setContentView(R.layout.activity_maintemp);
 		et = (EditText) this.findViewById(R.id.et);
 		etbtnpaint = (Button) this.findViewById(R.id.etbtnpaint);
 		etbtncamera = (Button) this.findViewById(R.id.etbtncamera);
@@ -45,14 +44,14 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		etbtntest = (Button) this.findViewById(R.id.etbtntest);
 		etbtnaudio = (Button) this.findViewById(R.id.etbtnaudio);
 		etbtnlecture = (Button) this.findViewById(R.id.etbtnlecture);
+		etbtnmenu = (Button) this.findViewById(R.id.etbtnmenu);
 
+		etbtnmenu.setOnClickListener(this);
 		etbtnlecture.setOnClickListener(this);
 		etbtnaudio.setOnClickListener(this);
 		etbtntest.setOnClickListener(this);
 		etbtndeletedb.setOnClickListener(this);
 		etbtnDB.setOnClickListener(this);
-		// db_scrollview.setOnClickListener(this);
-		// ll_db.setOnClickListener(this);
 		etbtnpaint.setOnClickListener(this);
 		etbtn.setOnClickListener(this);
 		etbtncamera.setOnClickListener(this);
@@ -66,7 +65,9 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		// DEBUGGING
 		// DEBUGGING
 		// DEBUGGING
-		startActivity(new Intent(this, Notes_Activity.class));
+		// Tools.startActivity(this, Home_Activity.class);
+		// startActivity(new Intent(this, Home_Activity.class));
+		// startActivity(new Intent(this, Notes_Activity.class));
 
 	}
 
@@ -117,24 +118,22 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			addNote();
 			break;
 		case R.id.etbtnpaint:
-//			startActivity(new Intent(this, Paint_Activity.class));
+			// startActivity(new Intent(this, Paint_Activity.class));
 			Toast.makeText(this, "Paint Activity has been removed!", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.etbtncamera:
-			startActivity(new Intent(this, Camera_Activity.class));
+			Tools.startActivity(this, Camera_Activity.class);
 			break;
 		case R.id.etbtnfiles:
-			startActivity(new Intent(this, Files_Activity.class));
+			Tools.startActivity(this, Files_Activity.class);
 			break;
 		case R.id.etbtnaudio:
-			startActivity(new Intent(this, Audio_Activity.class));
+			Tools.startActivity(this, Audio_Activity.class);
 			break;
 		case R.id.etbtndeletedatabase:
-			// delete database
 			Tools.delteDatabase(this);
 			ll_scrollView.removeAllViews();
 			ll_db.removeAllViews();
-			// delete file directory
 			Tools.deleteFiles(this);
 			break;
 		case R.id.etbtndb:
@@ -150,11 +149,14 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			}
 			break;
 		case R.id.etbtnlecture:
-//			startActivity(new Intent(this, Notes_Activity.class));
-			startActivity(new Intent(this, Notes_Activity.class));
+			// startActivity(new Intent(this, Notes_Activity.class));
+			Tools.startActivity(this, Notes_Activity.class);
 			break;
 		case R.id.etbtntest:
 			removeNote();
+			break;
+		case R.id.etbtnmenu:
+			Tools.startActivity(this, Home_Activity.class);
 			break;
 		default:
 			break;

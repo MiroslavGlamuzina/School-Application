@@ -8,15 +8,16 @@ import java.util.Date;
 import java.util.UUID;
 
 import activity.MainActivity;
+import android.R;
+import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableRow;
 import android.widget.Toast;
 import database.Database;
@@ -29,6 +30,11 @@ public class Tools {
 	 */
 	public static final String HASH = " qwerqwer ";
 	public static final String FLAG = " iuoyiouy ";
+
+	public static void startActivity(Context c, Class mclass) {
+		c.startActivity(new Intent(c, mclass));
+		((Activity) c).overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+	}
 
 	/**
 	 * <b> setMargins()</b></br>
