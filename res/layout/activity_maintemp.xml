@@ -147,6 +147,14 @@
             android:layout_weight="2"
             android:clickable="true"
             android:text="Menu" />
+
+        <Button
+            android:id="@+id/etbtnprev"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:text="Prev" />
     </LinearLayout>
 
 </LinearLayout>

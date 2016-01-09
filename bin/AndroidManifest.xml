@@ -50,6 +50,10 @@
             android:name="activity.Home_Activity"
             android:label="@string/app_name" >
         </activity>
+              <activity
+            android:name="activity.PreviousLectures_Activity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

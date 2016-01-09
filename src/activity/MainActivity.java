@@ -25,7 +25,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	public static LinearLayout ll_main, ll_scrollView, ll_db;
 	public static EditText et;
 	public static Button etbtn, etbtnpaint, etbtncamera, etbtnfiles, etbtnDB, etbtndeletedb, etbtntest, etbtnaudio,
-			etbtnlecture, etbtnmenu;
+			etbtnlecture, etbtnmenu,etbtnprev;
 	public static ScrollView scrollView, db_scrollview;
 
 	@Override
@@ -45,7 +45,9 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		etbtnaudio = (Button) this.findViewById(R.id.etbtnaudio);
 		etbtnlecture = (Button) this.findViewById(R.id.etbtnlecture);
 		etbtnmenu = (Button) this.findViewById(R.id.etbtnmenu);
+		etbtnprev = (Button) this.findViewById(R.id.etbtnprev);
 
+		etbtnprev.setOnClickListener(this);
 		etbtnmenu.setOnClickListener(this);
 		etbtnlecture.setOnClickListener(this);
 		etbtnaudio.setOnClickListener(this);
@@ -61,9 +63,8 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		if (db.size() <= 0) {
 			db.createRecords(Tools.getDateString(), "", "", "", "", "", "", "");
 		}
-		// DEBUGGING
-		// DEBUGGING
-		// DEBUGGING
+		
+		
 		// DEBUGGING
 		// Tools.startActivity(this, Home_Activity.class);
 		// startActivity(new Intent(this, Home_Activity.class));
@@ -156,6 +157,9 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			break;
 		case R.id.etbtnmenu:
 			Tools.startActivity(this, Home_Activity.class);
+			break;
+		case R.id.etbtnprev:
+			Tools.startActivity(this, PreviousLectures_Activity.class);
 			break;
 		default:
 			break;

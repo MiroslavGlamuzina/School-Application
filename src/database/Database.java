@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 import tools.Entry;
+import tools.EntryList;
 import tools.Tools;
 
 public class Database {
@@ -288,6 +289,22 @@ public class Database {
 		return res;
 	}
 
+	public String getDate(String id) {
+		String res = "";
+		database = dbHelper.getReadableDatabase();
+		Cursor c = database.rawQuery("SELECT " + DATE + " FROM MyTable where PID =" + id, null);
+		int i = 0;
+		if (c.getCount() > 0) {
+			c.moveToFirst();
+			do {
+				res = c.getString(c.getColumnIndex(TITLE));
+				i++;
+			} while (c.moveToNext());
+			c.close();
+		}
+		return res;
+	}
+
 	public String getDescription(String id) {
 		String res = "";
 		database = dbHelper.getReadableDatabase();
@@ -509,13 +526,12 @@ public class Database {
 		return res;
 	}
 
-	public ArrayList<Entry> getAll(String id) {
+	public ArrayList<Entry> getAllFromID(String id) {
 		String[] note = getDescription(id).split(Tools.HASH);
 		String[] video = getVideo(id).split(Tools.HASH);
 		String[] picture = getPicture(id).split(Tools.HASH);
 		String[] drawing = getDrawing(id).split(Tools.HASH);
 		String[] audio = getAudio(id).split(Tools.HASH);
-
 		// all into one
 		ArrayList<Entry> entries = new ArrayList<Entry>();
 		if (note.length > 2) {
@@ -544,5 +560,9 @@ public class Database {
 			}
 		}
 		return entries;
+	}
+
+	public EntryList getAllList(String id) {
+		return new EntryList(getTitle(id), getDate(id), sizeAudio(id), sizeDrawing(id), sizePicture(id), sizeTags(id));
 	}
 }

@@ -60,7 +60,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		lecture_title = (TextView)rootView.findViewById(R.id.notes_lecturetitle);
 		
 		Database db = new Database(getContext());
-		db.updateTitle("Biology Lecture 1", Tools.getCurrentID());
+//		db.updateTitle("Biology Lecture 1", Tools.getCurrentID());
 		lecture_title.setText(db.getTitle(Tools.getCurrentID()));
 		
 		submit_btn.setOnClickListener(this);
@@ -77,7 +77,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 
 	private void DEBUGGING() {
 		Database db = new Database(getContext());
-		ArrayList<Entry> temp = Entry.sortEntries(db.getAll("1"));
+		ArrayList<Entry> temp = Entry.sortEntries(db.getAllFromID("1"));
 		String res = "";
 		for (int i = 0; i < temp.size(); i++) {
 			res += temp.get(i).getDate() + ", " + temp.get(i).getVal() + ", " + temp.get(i).getType() + "\n";
@@ -91,7 +91,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 		getActivity().runOnUiThread(new Runnable() {
 			public void run() {
 				Database db = new Database(getContext());
-				ArrayList<Entry> list = Entry.sortEntries(db.getAll("1"));
+				ArrayList<Entry> list = Entry.sortEntries(db.getAllFromID("1"));
 				String note_temp = "";
 				addTextElement("testing!!");
 				for (int i = 0; i < list.size(); i++) {
