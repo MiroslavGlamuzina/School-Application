@@ -33,8 +33,15 @@ public class Tools {
 	public static final String HASH = " qwerqwer ";
 	public static final String FLAG = " iuoyiouy ";
 
-	public static long memory() {
+	public static long memoryAvailable() {
 		StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
+		long bytesAvailable = (long) stat.getFreeBlocks() * (long) stat.getBlockSize();
+		long megAvailable = bytesAvailable / 1048576;
+		return megAvailable;
+	}
+
+	public static long memoryUsed(Context c) {
+		StatFs stat = new StatFs(getContextWrapperDir(c).getAbsolutePath());
 		long bytesAvailable = (long) stat.getFreeBlocks() * (long) stat.getBlockSize();
 		long megAvailable = bytesAvailable / 1048576;
 		return megAvailable;

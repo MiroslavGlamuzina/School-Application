@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		if (db.size() <= 0) {
 			db.createRecords(Tools.getDateString(), "", "", "", "", "", "", "");
 		}
-		Toast.makeText(this, String.valueOf(Tools.memory()), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Memory Available: "+String.valueOf(Tools.memoryAvailable())+"\nMemory Used: "+String.valueOf(Tools.memoryUsed(this)), Toast.LENGTH_LONG).show();
 
 		// DEBUGGING
 		// Tools.startActivity(this, Home_Activity.class);
