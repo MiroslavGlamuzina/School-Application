@@ -14,6 +14,8 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
+import android.os.StatFs;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,6 +32,13 @@ public class Tools {
 	 */
 	public static final String HASH = " qwerqwer ";
 	public static final String FLAG = " iuoyiouy ";
+
+	public static long memory() {
+		StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
+		long bytesAvailable = (long) stat.getFreeBlocks() * (long) stat.getBlockSize();
+		long megAvailable = bytesAvailable / 1048576;
+		return megAvailable;
+	}
 
 	public static void startActivity(Context c, Class mclass) {
 		c.startActivity(new Intent(c, mclass));
