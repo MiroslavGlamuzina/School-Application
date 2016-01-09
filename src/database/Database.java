@@ -297,7 +297,7 @@ public class Database {
 		if (c.getCount() > 0) {
 			c.moveToFirst();
 			do {
-				res = c.getString(c.getColumnIndex(TITLE));
+				res = c.getString(c.getColumnIndex(DATE));
 				i++;
 			} while (c.moveToNext());
 			c.close();
@@ -563,6 +563,6 @@ public class Database {
 	}
 
 	public EntryList getAllList(String id) {
-		return new EntryList(getTitle(id), getDate(id), sizeAudio(id), sizeDrawing(id), sizePicture(id), sizeTags(id));
+		return new EntryList(getTitle(id), getDate(id), sizeAudio(id), sizeDrawing(id), sizePicture(id), sizeTags(id), sizeDescription(id), Integer.parseInt(id));
 	}
 }

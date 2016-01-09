@@ -8,12 +8,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import database.Database;
 import tools.EntryList;
 
 public class PreviousLectures_Activity extends Activity {
-	ArrayList<EntryList> list = new ArrayList<EntryList>();
 	LinearLayout body;
 
 	@Override
@@ -23,16 +21,19 @@ public class PreviousLectures_Activity extends Activity {
 
 		body = (LinearLayout) this.findViewById(R.id.prev_list);
 
+		ArrayList<EntryList> list = new ArrayList<EntryList>();
 		Database db = new Database(this);
-		list.add(db.getAllList("1"));
-
-		for (int id = 0; id < list.size(); id++) {
+		for (int i = 1; i <= db.size(); i++) {
+			list.add(db.getAllList(String.valueOf(i)));
+		}
+		for(int i =0; i < list.size(); i++)
+		{
 			TextView tv = new TextView(this);
-			tv.setText("Title: " + list.get(id).getTitle() + ", Date: " + list.get(id).getDate() + ", AudioSize: "
-					+ list.get(id).getAudioSize() + ", PictureSize: " + list.get(id).getPictureSize()
-					+ ", DrawingSize: " + list.get(id).getDrawingSize() + ", NoteSize: " + list.get(id).getNoteSize());
+			tv.setText(list.get(i).getTitle()+"\n"+list.get(i).getDate()+"\n"+list.get(i).getAudioSize()+"\n"+list.get(i).getDrawingSize()+"\n"+list.get(i).getPictureSize()+"\n"+list.get(i).getTagsSize()+"\n"+list.get(i).getNoteSize());
 			body.addView(tv);
 		}
+	
+
 	}
 
 }
