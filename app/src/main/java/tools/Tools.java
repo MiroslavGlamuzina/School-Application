@@ -36,9 +36,11 @@ public class Tools {
     public static final String HASH = " qwerqwer ";
     public static final String FLAG = " iuoyiouy ";
 
-    /**<b>memoryAvailable()</b></br>
-     * @return  the total amount of Mbs (Megabytes) available in the internal data directory
-     * */
+    /**
+     * <b>memoryAvailable()</b></br>
+     *
+     * @return the total amount of Mbs (Megabytes) available in the internal data directory
+     */
     public static long memoryAvailable(Context c) {
         StatFs stat = new StatFs(getContextWrapperDir(c).getAbsolutePath());
         long bytesAvailable = (long) stat.getFreeBlocks() * (long) stat.getBlockSize();
@@ -116,7 +118,7 @@ public class Tools {
      * @return
      */
     public static String getFileNameAudio() {
-        return "AUDIO_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "") + ".3gp";
+        return "AUDIO_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "").replaceAll(":", "-") + ".3gp";
     }
 
     /**
@@ -126,7 +128,7 @@ public class Tools {
      * @return
      */
     public static String getFileNamePhoto() {
-        return "PIC_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "") + ".jpg";
+        return "PIC_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "").replaceAll(":", "-") + ".jpg";
     }
 
     /**
@@ -136,7 +138,7 @@ public class Tools {
      * @return
      */
     public static String getFileNameDrawing() {
-        return "DRAW_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "") + ".jpg";
+        return "DRAW_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "").replaceAll(":", "-") + ".jpg";
     }
 
     /**
@@ -146,7 +148,7 @@ public class Tools {
      * @return
      */
     public static String getFileNameVideo() {
-        return "VID_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "") + ".mp4";
+        return "VID_" + Tools.getCurrentID() + "_" + UUID.randomUUID().toString().replaceAll("-", "").replaceAll(":", "-") + ".mp4";
     }
 
     /**

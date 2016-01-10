@@ -461,7 +461,7 @@ int id action_mode_close_button 0x7f0c0023
 int id activity_chooser_view_content 0x7f0c0024
 int id alertTitle 0x7f0c0030
 int id always 0x7f0c001b
-int id audio_stamp 0x7f0c0054
+int id audio_chronometer 0x7f0c0054
 int id audio_test 0x7f0c0053
 int id beginning 0x7f0c0018
 int id buttonPanel 0x7f0c002b

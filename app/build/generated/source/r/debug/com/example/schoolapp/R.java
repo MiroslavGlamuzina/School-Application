@@ -1615,7 +1615,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f0c0024;
         public static final int alertTitle=0x7f0c0030;
         public static final int always=0x7f0c001b;
-        public static final int audio_stamp=0x7f0c0054;
+        public static final int audio_chronometer=0x7f0c0054;
         public static final int audio_test=0x7f0c0053;
         public static final int beginning=0x7f0c0018;
         public static final int buttonPanel=0x7f0c002b;
