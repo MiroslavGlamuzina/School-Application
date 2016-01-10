@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.schoolapp.R;
 
 public class Preferences_Activity extends PreferenceActivity {
-
+//testing git
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
