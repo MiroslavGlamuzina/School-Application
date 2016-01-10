@@ -30,6 +30,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		//commit changes
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_maintemp);
 		et = (EditText) this.findViewById(R.id.et);
