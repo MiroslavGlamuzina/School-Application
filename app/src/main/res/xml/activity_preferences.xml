@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBoxPreference
+        android:id="@+id/pref_audio_record_on_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="true"
+        android:key="@string/pref_record_on_start"
+        android:summary="Record audio on the start of a new lecture. Default is checked."
+        android:title="Record Lecture" />
+
+    <CheckBoxPreference
+        android:id="@+id/pref_camera_deafault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="true"
+        android:key="@string/pref_camera_default"
+        android:summary="Swipe right for camera. Default is checked."
+        android:title="Use Camera" />
+
+</PreferenceScreen>
