@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		//Still merging correctly trying atleast almost done???
+		//Still merging correctly trying atleast almost done??? done???
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_maintemp);
 		et = (EditText) this.findViewById(R.id.et);
