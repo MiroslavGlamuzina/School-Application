@@ -1,10 +1,7 @@
 package activity;
 
-import java.util.ArrayList;
-
-import com.example.schoolapp.R;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.schoolapp.R;
+
+import java.util.ArrayList;
 
 import database.Database;
 import tools.Tools;
@@ -30,7 +31,6 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Still merging correctly trying atleast almost done??? done???
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintemp);
         et = (EditText) this.findViewById(R.id.et);
@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
         // DEBUGGING
         // Tools.startActivity(this, Home_Activity.class);
         // startActivity(new Intent(this, Home_Activity.class));
-        // startActivity(new Intent(this, Notes_Activity.class));
+        // startActivity(new Intent(this, Notes_Activity_OLD.class));
 
     }
 
@@ -161,7 +161,9 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
                 }
                 break;
             case R.id.etbtnlecture:
-                Tools.startActivity(this, Notes_Activity.class);
+//                Tools.startActivity(this, Notes_Activity.class);
+                Intent i = new Intent(this, Notes_Activity.class);
+                startActivity(i);
                 break;
             case R.id.etbtntest:
                 removeNote();
@@ -176,7 +178,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
                 Tools.startActivity(this, Preferences_Activity.class);
                 break;
             case R.id.etbtntesterclass:
-                Tools.startActivity(this, Preferences_Activity.class);
+                Tools.startActivity(this, Notes_Activity_OLD.class);
                 break;
             default:
                 break;

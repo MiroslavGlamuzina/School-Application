@@ -60,8 +60,6 @@ public class Camera_Activity extends Activity implements OnClickListener {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         thumbnailCaptureOnActivityResult(requestCode, resultCode, data);
     }
-
-    //todo something here
     Bitmap bitMap;
     Uri imageUri;
 
