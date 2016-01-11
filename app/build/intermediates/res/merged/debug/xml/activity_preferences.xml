@@ -22,13 +22,13 @@
         android:title="Use Camera"/>
 
     <!--<CheckBoxPreference-->
-        <!--android:id="@+id/pref_delete_all"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:defaultValue="false"-->
-        <!--android:key="@string/pref_delete_all"-->
-        <!--android:summary="This will delete all data from this application on your phone. There is no re-do's. Be careful! "-->
-        <!--android:title="Delete All"/>-->
+    <!--android:id="@+id/pref_delete_all"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:defaultValue="false"-->
+    <!--android:key="@string/pref_delete_all"-->
+    <!--android:summary="This will delete all data from this application on your phone. There is no re-do's. Be careful! "-->
+    <!--android:title="Delete All"/>-->
     <Preference
         android:id="@+id/pref_delete_all"
         android:layout_width="wrap_content"

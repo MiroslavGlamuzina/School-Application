@@ -5,7 +5,6 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:weightSum="100"
-              app:theme="@style/AppTheme"
               tools:context="activity.Home_Activity">
 
     <!-- FIRST ROW -->
