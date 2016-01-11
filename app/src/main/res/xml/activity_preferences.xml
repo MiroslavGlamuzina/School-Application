@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
 
     <CheckBoxPreference
         android:id="@+id/pref_audio_record_on_start"
@@ -10,7 +10,7 @@
         android:defaultValue="true"
         android:key="@string/pref_record_on_start"
         android:summary="Record audio on the start of a new lecture. Default is checked."
-        android:title="Record Lecture" />
+        android:title="Record Lecture"/>
 
     <CheckBoxPreference
         android:id="@+id/pref_camera_deafault"
@@ -19,6 +19,24 @@
         android:defaultValue="true"
         android:key="@string/pref_camera_default"
         android:summary="Swipe right for camera. Default is checked."
-        android:title="Use Camera" />
+        android:title="Use Camera"/>
+
+    <!--<CheckBoxPreference-->
+    <!--android:id="@+id/pref_delete_all"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:defaultValue="false"-->
+    <!--android:key="@string/pref_delete_all"-->
+    <!--android:summary="This will delete all data from this application on your phone. There is no re-do's. Be careful! "-->
+    <!--android:title="Delete All"/>-->
+    <Preference
+        android:id="@+id/pref_delete_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="@string/pref_delete_all"
+        android:selectable="true"
+        android:summary="This will delete all data from this application on your phone. There is no re-do's. Be careful! "
+        android:title="Delete All"
+        ></Preference>
 
 </PreferenceScreen>

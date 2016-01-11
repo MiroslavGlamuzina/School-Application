@@ -11,8 +11,10 @@ public class EntryList {
 	int drawingSize = 0;
 	int pictureSize = 0;
 	int tagsSize = 0;
-	int ID =0 ; 
-	public EntryList(String title, String date, int audioSize, int drawingSize, int pictureSize, int tagsSize, int notesSize, int ID) {
+	int flagSize = 0;
+	int ID = 0;
+
+	public EntryList(String title, String date, int audioSize, int drawingSize, int pictureSize, int tagsSize, int notesSize, int flagsSize, int ID) {
 		this.title = title;
 		this.date = date;
 		this.audioSize = audioSize;
@@ -20,6 +22,7 @@ public class EntryList {
 		this.pictureSize = pictureSize;
 		this.pictureSize = pictureSize;
 		this.tagsSize = tagsSize;
+		this.flagSize = flagsSize;
 		this.noteSize = notesSize;
 		this.ID = ID;
 	}

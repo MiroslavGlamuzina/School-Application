@@ -104,7 +104,6 @@ public class Tools {
         try {
             file = File.createTempFile(getContextWrapperDir(c).getAbsolutePath(), str);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         Uri uri = Uri.fromFile(file);
@@ -346,11 +345,11 @@ public class Tools {
      *
      * @param context -Current application context
      */
-    public static void delteDatabase(Context context) {
+    public static void deleteDatabase(Context context) {
         Database dbtemp = new Database(context);
         dbtemp.deleteDatabase();
-        dbtemp.createRecords(getDateString(), "", "", "", "", "", "", "");
-        Toast.makeText(context, "Database has been deleted", Toast.LENGTH_SHORT).show();
+        dbtemp.createRecords(getDateString(), "", "", "", "", "", "", "", "");
+        Toast.makeText(context, "Database has been deleted", Toast.LENGTH_SHORT).show(); //temp
     }
 
     /**

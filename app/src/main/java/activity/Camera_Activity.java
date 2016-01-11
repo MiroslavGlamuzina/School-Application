@@ -52,7 +52,6 @@ public class Camera_Activity extends Activity implements OnClickListener {
         cameraBtn = (Button) this.findViewById(R.id.camera);
         hscroll = (LinearLayout) this.findViewById(R.id.hscrollcam);
         testing = (LinearLayout) this.findViewById(R.id.camera_test);
-        //complete todo something here
         cameraBtn.setOnClickListener(this);
         testing.setOnClickListener(this);
     }

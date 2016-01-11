@@ -44,12 +44,12 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_notes_camera.xml",
-        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_notes_camera.xml"
-    },
-    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_notes_viewpager.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_notes_viewpager.xml"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_notes_camera.xml",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_notes_camera.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_audio.xml",

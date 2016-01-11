@@ -15,6 +15,7 @@ public class Entry {
 	public static final String DRAWING = "DRAWING";
 	public static final String VIDEO = "VIDEO";
 	public static final String NOTE = "NOTE";
+	public static final String FLAG = "FLAG";
 
 	public Entry(String date, String val, String type) {
 		this.val = val;

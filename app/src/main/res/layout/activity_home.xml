@@ -1,10 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="100"
-    tools:context="activity.Home_Activity" >
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:weightSum="100"
+              app:theme="@style/AppTheme"
+              tools:context="activity.Home_Activity">
 
     <!-- FIRST ROW -->
 
@@ -13,7 +15,7 @@
         android:layout_height="0dp"
         android:layout_weight="30"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100">
 
         <LinearLayout
             android:id="@+id/main_newlecture"
@@ -21,14 +23,14 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#23672f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#a03b3b"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="New Lectures"
-                android:background="#a03b3b" />
+                android:text="New Lectures"/>
         </LinearLayout>
 
         <LinearLayout
@@ -37,14 +39,14 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#2fcd2f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#b24b4b"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Old Lecture"
-                android:background="#b24b4b" />
+                android:text="Old Lecture"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -55,7 +57,7 @@
         android:layout_height="0dp"
         android:layout_weight="30"
         android:orientation="horizontal"
-        android:weightSum="150" >
+        android:weightSum="150">
 
         <LinearLayout
             android:id="@+id/main_temp1"
@@ -63,14 +65,14 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#23672f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#c56e56"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="temp 1"
-                android:background="#c56e56" />
+                android:text="temp 1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -79,14 +81,14 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#2fcd2f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#e65d2b"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="temp 2"
-                android:background="#e65d2b" />
+                android:text="temp 2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,14 +97,14 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#200d2f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#f6a000"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Temp 3"
-                android:background="#f6a000" />
+                android:text="Temp 3"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -113,7 +115,7 @@
         android:layout_height="0dp"
         android:layout_weight="30"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100">
 
         <LinearLayout
             android:id="@+id/main_temp4"
@@ -121,30 +123,31 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:background="#23672f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#db5705"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Give Feedback"
-                android:background="#db5705" />
+                android:text="Give Feedback"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/main_temp5"
+            android:id="@+id/main_preferences"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="50"
+
             android:background="#2fcd2f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#ff444f"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Settings"
-                android:background="#ff444f" />
+                android:text="Settings"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -155,7 +158,7 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100">
 
         <LinearLayout
             android:id="@+id/main_leavefeedback"
@@ -163,14 +166,14 @@
             android:layout_height="match_parent"
             android:layout_weight="100"
             android:background="#23672f"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#00eeff"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Leave Feedback"
-                android:background="#00eeff" />
+                android:text="Leave Feedback"/>
         </LinearLayout>
     </LinearLayout>
 

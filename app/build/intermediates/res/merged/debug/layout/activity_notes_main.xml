@@ -1,11 +1,12 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:id="@+id/ll_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="activity.Paint_Activity" >
+    tools:context="activity.Paint_Activity">
 
     <LinearLayout
         android:id="@+id/notes_header"
@@ -13,35 +14,36 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
-        android:weightSum="10" >
+        android:weightSum="12">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="&lt;-" />
+            android:text="&lt;-"/>
 
         <TextView
+            android:id="@+id/notes_lecturetitle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
-            android:id="@+id/notes_lecturetitle"
-            android:text="Untitled Lecture" />
+            android:text="Untitled Lecture"/>
+
 
         <Button
             android:id="@+id/notes_camtoggle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="cam" />
+            android:text="cam"/>
 
         <Button
             android:id="@+id/notes_audiotoggle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="aud" />
+            android:text="aud"/>
     </LinearLayout>
 
     <LinearLayout
@@ -49,20 +51,20 @@
         android:layout_height="0dp"
         android:layout_weight="80"
         android:orientation="vertical"
-        android:padding="5dp" >
+        android:padding="5dp">
 
         <ScrollView
             android:id="@+id/notes_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:animateLayoutChanges="true" >
+            android:animateLayoutChanges="true">
 
             <LinearLayout
                 android:id="@+id/notes_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:orientation="vertical" >
+                android:orientation="vertical">
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -73,23 +75,30 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
-        android:weightSum="10" >
+        android:weightSum="10">
 
         <EditText
             android:id="@+id/notes_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="8"
+            android:layout_weight="6"
             android:focusable="false"
             android:hint="+Add a Comment"
-            android:text="asasjkhdjkgfajksgdjfkagsjkddd" />
+            android:text="asasjkhdjkgfajksgdjfkagsjkddd"/>
 
         <Button
             android:id="@+id/notes_submit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="P" />
+            android:text="subt."/>
+
+        <Button
+            android:id="@+id/notes_flag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Flag"/>
     </LinearLayout>
 
 </LinearLayout>

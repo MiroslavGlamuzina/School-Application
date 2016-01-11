@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <!-- Customize your theme here. -->
+    </style>
     <style name="Base.TextAppearance.AppCompat.Button">
         <item name="android:textSize">@dimen/abc_text_size_button_material</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
+    <style name="LightTheme" parent="AppTheme"/>
     <style name="Platform.AppCompat" parent="Platform.V14.AppCompat"/>
     <style name="Platform.AppCompat.Light" parent="Platform.V14.AppCompat.Light"/>
     <style name="Platform.V14.AppCompat" parent="Platform.V11.AppCompat">
@@ -26,4 +30,7 @@
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Time"/>
     <style name="TextAppearance.StatusBar.EventContent.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="myDialog" parent="android:Theme.Dialog">
+
+    </style>
 </resources>
