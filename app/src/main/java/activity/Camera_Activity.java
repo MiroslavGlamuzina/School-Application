@@ -66,7 +66,7 @@ public class Camera_Activity extends Activity implements OnClickListener {
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// TODO
 		switch (v.getId()) {
 		case R.id.camera:
 			thumbnailCaptureIntent();

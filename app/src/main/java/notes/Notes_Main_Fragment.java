@@ -119,7 +119,6 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
 					try {
 						wait(50);
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

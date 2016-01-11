@@ -101,7 +101,7 @@ public class Audio_Activity extends Activity implements OnClickListener {
                         mediaPlayer.prepare();
                         mediaPlayer.start();
                     } catch (IllegalArgumentException e) {
-                        // TODO Auto-generated catch block
+                        // TODO finish this YAY is works
                         e.printStackTrace();
                     } catch (SecurityException e) {
                         // TODO Auto-generated catch block
