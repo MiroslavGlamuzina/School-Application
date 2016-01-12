@@ -39,6 +39,8 @@ import tools.Tools;
  * Created by miroslav on 11/01/16.
  */
 
+
+//// TODO: 11/01/16 dynamic scroll .. meaning. only hold a set number of items from the list in memory rest let the garbage collector take care off.
 public class Notes_Activity extends Activity implements View.OnClickListener {
     private final String TAG = "Notes_Activity";
     public static boolean isCamera = true;

@@ -1,8 +1,5 @@
 package helpers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,14 +11,19 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PaintView extends View implements OnTouchListener {
     private static final String TAG = "PaintView";
     public int color;
-    List<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
+    public static List<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
     public Paint paint = new Paint();
     public TextView tv;
     public float strokeWidth;
+    public static int index_mod = 0;
 
     public PaintView(Context context) {
         super(context);
@@ -32,6 +34,7 @@ public class PaintView extends View implements OnTouchListener {
         color = Color.BLUE;
         strokeWidth = 5f;
         paint.setAntiAlias(true);
+        points.add(new ArrayList<Point>());
     }
 
     @Override
@@ -54,6 +57,8 @@ public class PaintView extends View implements OnTouchListener {
         }
     }
 
+    public static boolean backPressed = false;
+    public static boolean passed = false;
     public boolean onTouch(View view, MotionEvent event) {
         if (points.size() == 0) {
             points.add(new ArrayList<Point>());
@@ -68,7 +73,10 @@ public class PaintView extends View implements OnTouchListener {
         Log.d(TAG, "point: " + point);
         if (event.getAction() == event.ACTION_UP) {
             points.add(new ArrayList<Point>());
+            Toast.makeText(getContext(), "second block", Toast.LENGTH_SHORT).show();
+            passed = true;
         }
+        backPressed = false;
         return true;
     }
 

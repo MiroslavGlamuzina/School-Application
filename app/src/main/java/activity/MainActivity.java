@@ -74,7 +74,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
         // DEBUGGING
         // Tools.startActivity(this, Home_Activity.class);
         // startActivity(new Intent(this, Home_Activity.class));
-        // startActivity(new Intent(this, Notes_Activity_OLD.class));
+        startActivity(new Intent(this, Drawing_Activity.class));
 
     }
 
