@@ -37,7 +37,7 @@ public class Home_Activity extends Activity implements android.view.View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_newlecture:
-                Tools.startActivity(this, Notes_Activity_OLD.class);
+                Tools.startActivity(this, Notes_Activity.class);
                 break;
             case R.id.main_oldlecture:
                 break;

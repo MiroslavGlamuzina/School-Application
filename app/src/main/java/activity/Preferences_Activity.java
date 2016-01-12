@@ -16,7 +16,8 @@ import com.example.schoolapp.R;
 import tools.Tools;
 
 public class Preferences_Activity extends PreferenceActivity {
-    //testing git
+    //todo add default color for the settings preference
+    //todo think of other think settings to add this activity.
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

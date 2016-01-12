@@ -29,6 +29,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
             etbtnlecture, etbtnmenu, etbtnprev, etbtnprefs, testclass;
     public static ScrollView scrollView, db_scrollview;
 
+    // // TODO: 11/01/16 create the main previous lecture activity and design/style it accordingly
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,7 +179,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
                 Tools.startActivity(this, Preferences_Activity.class);
                 break;
             case R.id.etbtntesterclass:
-                Tools.startActivity(this, Notes_Activity_OLD.class);
+                Tools.startActivity(this, Notes_Activity.class);
                 break;
             default:
                 break;

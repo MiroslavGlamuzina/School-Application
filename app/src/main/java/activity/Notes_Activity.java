@@ -32,7 +32,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import database.Database;
-import notes.Notes_Main_Fragment;
 import tools.Entry;
 import tools.Tools;
 
@@ -100,47 +99,63 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         body.removeAllViews();
         addAudioElement();// debugging
         runOnUiThread(new Runnable() {
-            public void run() {
-                Database db = new Database(Notes_Activity.this);
-                ArrayList<Entry> list = Entry.sortEntries(db.getAllFromID("1"));
-                String note_temp = "";
-                addTextElement("testing!!");
-                for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i).getType().equals(new String(Entry.NOTE))) {
-                        note_temp += list.get(i).getVal() + "\n";
-                    } else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
-                        if (!note_temp.equals(new String(""))) {
-                            addTextElement(note_temp);
-                            note_temp = "";
-                        }
-                        addPhotoElement(
-                                Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
-                    } else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
-                        if (!note_temp.equals(new String(""))) {
-                            addTextElement(note_temp);
-                            note_temp = "";
-                        }
-                        addPhotoElement(
-                                Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
-                    } else if (list.get(i).getType().equals(new String(Entry.FLAG))) {
-                        if (!note_temp.equals(new String(""))) {
-                            addTextElement(note_temp);
-                            note_temp = "";
-                        }
-                        addFlagElement();
-                    } else if (!note_temp.equals(new String(""))) {
-                        addTextElement(note_temp.substring(0, note_temp.length() - 2));
-                        note_temp = "";
-                    }
-                    // addPhotoElement(Uri.parse(list.get(i).getVal()));
-                    try {
-                        wait(50);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+                          public void run() {
+                              Database db = new Database(Notes_Activity.this);
+                              ArrayList<Entry> list = Entry.sortEntries(db.getAllFromID("1"));
+                              String note_temp = "";
+                              addTextElement("testing!!");
+                              for (int i = 0; i < list.size(); i++) {
+
+                                  if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+                                      addPhotoElement(
+                                              Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+                                  } else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
+                                      addPhotoElement(
+                                              Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+                                  } else if (list.get(i).getType().equals(new String(Entry.FLAG))) {
+                                      addFlagElement();
+                                  } else if (list.get(i).getType().equals(new String(Entry.NOTE))) {
+                                      addTextElement(list.get(i).getVal());
+                                  }
+                              }
+                              //// TODO alt
+//                    if (list.get(i).getType().equals(new String(Entry.NOTE))) {
+//                        note_temp += list.get(i).getVal() + "\n";
+//                    } else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+//                        if (!note_temp.equals(new String(""))) {
+//                            addTextElement(note_temp);
+//                            note_temp = "";
+//                        }
+//                        addPhotoElement(
+//                                Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+//                    } else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
+//                        if (!note_temp.equals(new String(""))) {
+//                            addTextElement(note_temp);
+//                            note_temp = "";
+//                        }
+//                        addPhotoElement(
+//                                Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+//                    } else if (list.get(i).getType().equals(new String(Entry.FLAG))) {
+//                        if (!note_temp.equals(new String(""))) {
+//                            addTextElement(note_temp);
+//                            note_temp = "";
+//                        }
+//                        addFlagElement();
+//                    } else if (!note_temp.equals(new String(""))) {
+//                        addTextElement(note_temp.substring(0, note_temp.length() - 2));
+//                        note_temp = "";
+//                    }
+//                  addPhotoElement(Uri.parse(list.get(i).getVal()));
+//                try {
+//                    wait(50);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+                          }
+                      }
+
+        );
     }
 
     @SuppressLint("NewApi")
@@ -180,7 +195,6 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         iv.setImageURI(imgUri);
         item.addView(iv);
         body.addView(item);
-
     }
 
     public void addDrawElement() {
@@ -249,11 +263,12 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         body.addView(item);
     }
 
+    //// TODO: 11/01/16 think of a better way to incorporate values.. add values .. updt the submit button to show dynamically , maybe create a view for it.
     public void insertNote() {
         TextView tv = new TextView(this);
         String edittext = "";
         edittext = note_et.getText().toString();
-
+        edittext = "temp";
         Database db = new Database(this);
         db.updateNote(edittext, "1");
         Toast.makeText(this,
@@ -303,7 +318,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
                 Tools.startActivity(this, Drawing_Activity.class); //// completed: 11/01/16
                 break;
             case R.id.notes_camera:
-//                Tools.startActivity(this, Camera_Capture_Activity.class); // completed: 11/01/16
+//                Tools.startActivity(this, Camera_Capture_Activity.class); // completed: 11/01/16 -- REMOVED THE CAMERA ACTIVITY
                 thumbnailCaptureIntent();
                 break;
             case R.id.notes_video:
@@ -314,7 +329,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         }
     }
 
-    // CAMERA CLASS
+    // CAMERA CAPTURE INTENT / CODE / RESOURCES
     public static final int REQUEST_CAMERA = 1;
 
     private void thumbnailCaptureIntent() {
@@ -337,6 +352,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
             } else {
                 // Image capture failed, advise user
                 //fix: notify if the user is out of internal memory .
+                populateBody();//// FIXME: 11/01/16 -> do a neater adding the layout... consumes too much RAM
             }
         }
     }
@@ -344,13 +360,15 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
     private void saveExternal(Bitmap image) {
         File pictureFile = saveInternal();
         if (pictureFile == null) {
-            Log.d("SaveImage(); ", "Error creating media file, check storage permissions: ");// e.getMessage());
+            Log.d("SaveImage(); ", "Error creating media file, check storage permissions: ");
             return;
         }
         try {
             FileOutputStream fos = new FileOutputStream(pictureFile);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
+            addPhotoElement(Tools.getFileUri(pictureFile)); // // DEBUG: 11/01/16 find a faster || correct way to insert values.. make sure to prevent values in the linear layout from been lost at any point.. also ensure that all values are stored with least amount of memory taken
+            scrollDown();
         } catch (FileNotFoundException e) {
             Log.d("SaveImage(); ", "File not found: " + e.getMessage());
         } catch (IOException e) {
@@ -366,7 +384,19 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         Database db = new Database(this);
         db.updatePicture(mImageName, String.valueOf(MainActivity.CURRENT_ID));
         mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
-        Notes_Main_Fragment.takenPhoto = true;
+        Notes_Activity.takenPhoto = true;
         return mediaFile;
+    }
+
+    public static File drawing_activity_file_temp = null;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (savedDrawing) {
+            addPhotoElement(Tools.getFileUri(drawing_activity_file_temp));
+            savedDrawing = false;
+            scrollDown();
+        }
     }
 }

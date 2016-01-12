@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:2:1-77:12
+ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:2:1-66:12
 	xmlns:android
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:4:5-63
 	package
@@ -51,7 +51,7 @@ ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/Android
 	android:name
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:19:22-76
 application
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:21:5-75:19
+ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:21:5-64:19
 MERGED from [com.android.support:appcompat-v7:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
@@ -79,63 +79,45 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:32:17-76
 	android:name
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:32:27-74
-activity#activity.Camera_Activity
+activity#activity.Files_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:35:9-38:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:37:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:36:13-52
-activity#activity.Files_Activity
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:36:13-51
+activity#activity.Audio_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:39:9-42:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:41:13-45
 	android:name
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:40:13-51
-activity#activity.Notes_Activity_OLD
+activity#activity.Home_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:43:9-46:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:45:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:44:13-55
-activity#activity.Audio_Activity
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:44:13-50
+activity#activity.PreviousLectures_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:47:9-50:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:49:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:48:13-51
-activity#activity.Home_Activity
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:48:13-62
+activity#activity.Preferences_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:51:9-54:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:53:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:52:13-50
-activity#activity.PreviousLectures_Activity
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:52:13-57
+activity#activity.Notes_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:55:9-58:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:57:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:56:13-62
-activity#activity.Preferences_Activity
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:56:13-51
+activity#activity.Drawing_Activity
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:59:9-62:20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:61:13-45
 	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:60:13-57
-activity#activity.Notes_Activity
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:63:9-66:20
-	android:label
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:65:13-45
-	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:64:13-51
-activity#activity.Drawing_Activity
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:67:9-70:20
-	android:label
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:69:13-45
-	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:68:13-53
-activity#activity.Camera_Capture_Activity
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:71:9-74:20
-	android:label
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:73:13-45
-	android:name
-		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:72:13-60
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:60:13-53

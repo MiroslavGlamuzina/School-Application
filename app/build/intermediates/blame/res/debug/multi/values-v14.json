@@ -33,7 +33,15 @@
                     "endOffset": 454
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 239,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 510
+                    }
                 }
             },
             {
@@ -45,7 +53,14 @@
                     "endOffset": 503
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/values-v14/styles.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/values-v14/styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 422,
+                        "endColumn": 48,
+                        "endOffset": 466
+                    }
                 }
             },
             {
@@ -57,7 +72,14 @@
                     "endOffset": 574
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 694,
+                        "endColumn": 70,
+                        "endOffset": 760
+                    }
                 }
             },
             {
@@ -69,7 +91,14 @@
                     "endOffset": 657
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 765,
+                        "endColumn": 82,
+                        "endOffset": 843
+                    }
                 }
             },
             {
@@ -82,7 +111,15 @@
                     "endOffset": 1067
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 848,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 1253
+                    }
                 }
             },
             {
@@ -95,7 +132,15 @@
                     "endOffset": 1489
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1258,
+                        "endLine": 24,
+                        "endColumn": 12,
+                        "endOffset": 1675
+                    }
                 }
             },
             {
@@ -107,7 +152,14 @@
                     "endOffset": 1609
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1854,
+                        "endColumn": 119,
+                        "endOffset": 1969
+                    }
                 }
             },
             {
@@ -119,7 +171,14 @@
                     "endOffset": 1672
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1974,
+                        "endColumn": 62,
+                        "endOffset": 2032
+                    }
                 }
             },
             {
@@ -132,7 +191,15 @@
                     "endOffset": 1826
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 2037,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 2186
+                    }
                 }
             },
             {
@@ -144,7 +211,14 @@
                     "endOffset": 1889
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 2191,
+                        "endColumn": 62,
+                        "endOffset": 2249
+                    }
                 }
             },
             {
@@ -156,7 +230,14 @@
                     "endOffset": 2021
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 2254,
+                        "endColumn": 131,
+                        "endOffset": 2381
+                    }
                 }
             },
             {
@@ -169,7 +250,15 @@
                     "endOffset": 2093
                 },
                 "from": {
-                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/values-v14/styles.xml"
+                    "file": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/values-v14/styles.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 349,
+                        "endLine": 13,
+                        "endColumn": 12,
+                        "endOffset": 416
+                    }
                 }
             }
         ]

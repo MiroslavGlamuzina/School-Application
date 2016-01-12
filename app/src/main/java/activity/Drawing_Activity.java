@@ -23,12 +23,14 @@ import java.io.IOException;
 
 import database.Database;
 import helpers.PaintView;
-import notes.Notes_Main_Fragment;
 import tools.Tools;
 
 /**
  * Created by miroslav on 11/01/16.
  */
+
+// TODO: 11/01/16 make this activity look like the google keep drawing activity
+    
 public class Drawing_Activity extends Activity implements View.OnClickListener {
     private final String TAG = "Notes_Drawing_Fragment";
     public static Boolean isStarted = false;
@@ -165,7 +167,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
     public void saveDrawing() {
         Bitmap bitmap = paintView.getBitmap();
         saveExternal(bitmap);
-        Notes_Main_Fragment.savedDrawing = true;
+        Notes_Activity.savedDrawing = true;
         //return to other screen
         Tools.backButton(canvas);
     }
@@ -180,6 +182,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
             FileOutputStream fos = new FileOutputStream(pictureFile);
             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
             fos.close();
+            Notes_Activity.drawing_activity_file_temp = pictureFile;
         } catch (FileNotFoundException e) {
             Log.d("SaveImage(); ", "File not found: " + e.getMessage());
         } catch (IOException e) {

@@ -33,15 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="activity.Camera_Activity"
-            android:label="@string/app_name">
-        </activity>
-        <activity
             android:name="activity.Files_Activity"
-            android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="activity.Notes_Activity_OLD"
             android:label="@string/app_name">
         </activity>
         <activity
@@ -68,10 +60,7 @@
             android:name="activity.Drawing_Activity"
             android:label="@string/app_name">
         </activity>
-        <activity
-            android:name="activity.Camera_Capture_Activity"
-            android:label="@string/app_name">
-        </activity>
+
     </application>
 
 </manifest>

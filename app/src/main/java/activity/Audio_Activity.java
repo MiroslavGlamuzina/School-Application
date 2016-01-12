@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import database.Database;
 import tools.Tools;
 
-//add this to project notes
+// // TODO: 11/01/16 create an audio service to use inside of the main application
 public class Audio_Activity extends Activity implements OnClickListener {
     Button start, stop, btntest;
     MediaRecorder recorder = null;
