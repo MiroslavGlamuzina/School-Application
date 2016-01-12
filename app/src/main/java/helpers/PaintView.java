@@ -11,7 +11,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,21 +19,37 @@ public class PaintView extends View implements OnTouchListener {
     private static final String TAG = "PaintView";
     public int color;
     public static List<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
+    public static List<ArrayList<Point>> points_history = new ArrayList<ArrayList<Point>>();
     public Paint paint = new Paint();
     public TextView tv;
     public float strokeWidth;
-    public static int index_mod = 0;
+
+    //stroke widths
+    public static final int stroke_width_one = 10;
+    public static final int stroke_width_two = 15;
+    public static final int stroke_width_three = 20;
+    public static final int stroke_width_four = 25;
+    public static final int stroke_width_five = 30;
+    public static final int stroke_width_six = 35;
+    public static final int stroke_width_seven = 40;
+    public static final int stroke_width_eight = 45;
+
 
     public PaintView(Context context) {
         super(context);
         setFocusable(true);
         setFocusableInTouchMode(true);
         this.setOnTouchListener(this);
+
         paint.setColor(Color.BLUE);
+        paint.setDither(true);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.MITER);
+        paint.setAntiAlias(true);
+
         color = Color.BLUE;
         strokeWidth = 5f;
-        paint.setAntiAlias(true);
-        points.add(new ArrayList<Point>());
     }
 
     @Override
@@ -45,38 +60,30 @@ public class PaintView extends View implements OnTouchListener {
                 paint.setStrokeWidth(points.get(i).get(j).strokeWidth);
                 canvas.drawLine(points.get(i).get(j).x, points.get(i).get(j).y, points.get(i).get(j + 1).x,
                         points.get(i).get(j + 1).y, paint);
-
-                /** helps out unevenness */
-                // canvas.drawLine(points.get(i).get(j).x + 1,
-                // points.get(i).get(j).y + 1, points.get(i).get(j + 1).x,
-                // points.get(i).get(j + 1).y, paint);
-                // canvas.drawLine(points.get(i).get(j).x - 1,
-                // points.get(i).get(j).y - 1, points.get(i).get(j + 1).x,
-                // points.get(i).get(j + 1).y, paint);
             }
         }
     }
 
-    public static boolean backPressed = false;
-    public static boolean passed = false;
     public boolean onTouch(View view, MotionEvent event) {
-        if (points.size() == 0) {
+//        if (points.size() == 0) {
+//            points.add(new ArrayList<Point>());
+//        }
+        if (event.getAction() == event.ACTION_DOWN) {
             points.add(new ArrayList<Point>());
+            points_history.add(new ArrayList<Point>());
         }
-        Point point = new Point();
-        point.x = event.getX();
-        point.y = event.getY();
-        point.color = color;
-        point.strokeWidth = strokeWidth;
-        points.get(points.size() - 1).add(point);
-        invalidate();
-        Log.d(TAG, "point: " + point);
-        if (event.getAction() == event.ACTION_UP) {
-            points.add(new ArrayList<Point>());
-            Toast.makeText(getContext(), "second block", Toast.LENGTH_SHORT).show();
-            passed = true;
+        Point point = null;
+        if (event.getAction() == event.ACTION_MOVE) {
+            point = new Point();
+            point.x = event.getX();
+            point.y = event.getY();
+            point.color = color;
+            point.strokeWidth = strokeWidth;
+            points.get(points.size() - 1).add(point);
+            points_history.get(points_history.size() - 1).add(point);
+            invalidate();
         }
-        backPressed = false;
+        Log.d(TAG, "Point_HISTORY Size: " + String.valueOf(points_history.size()));
         return true;
     }
 

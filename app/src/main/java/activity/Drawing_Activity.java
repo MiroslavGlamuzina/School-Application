@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.schoolapp.R;
 
@@ -41,7 +40,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
     public static Boolean isStarted = false;
     public static Boolean isVisible = false;
 
-    PaintView paintView;
+    PaintView pv;
     LinearLayout canvas;
     Button btncolor_blue, btncolor_green, btncolor_red, btncolor_yellow, btncolor_white, back_btn, forward_btn;
     ImageButton btn_stroke1, btn_stroke2, btn_stroke3, btn_stroke4, btn_stroke5, btn_stroke6, btn_stroke7, btn_stroke8;
@@ -53,10 +52,10 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_notes_drawing);
 
-        paintView = new PaintView(this);
-        paintView.requestFocus();
+        pv = new PaintView(this);
+        pv.requestFocus();
         canvas = (LinearLayout) this.findViewById(R.id.canvas);
-        canvas.addView(paintView);
+        canvas.addView(pv);
 
         btncolor_blue = (Button) this.findViewById(R.id.colorbtn_blue);
         btncolor_green = (Button) this.findViewById(R.id.colorbtn_green);
@@ -111,7 +110,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         Canvas canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        int rad = 10;
+        int rad = pv.stroke_width_one;
         ImageView size_one = (ImageView) findViewById(R.id.paint_size_one);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_one.setAdjustViewBounds(true);
@@ -121,7 +120,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 15;
+        rad = pv.stroke_width_two;
         ImageView size_two = (ImageView) findViewById(R.id.paint_size_two);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_two.setAdjustViewBounds(true);
@@ -131,7 +130,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 20;
+        rad = pv.stroke_width_three;
         ImageView size_three = (ImageView) findViewById(R.id.paint_size_three);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_three.setAdjustViewBounds(true);
@@ -141,7 +140,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 25;
+        rad = pv.stroke_width_four;
         ImageView size_four = (ImageView) findViewById(R.id.paint_size_four);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_four.setAdjustViewBounds(true);
@@ -151,7 +150,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 30;
+        rad = pv.stroke_width_five;
         ImageView size_five = (ImageView) findViewById(R.id.paint_size_five);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_five.setAdjustViewBounds(true);
@@ -161,7 +160,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 35;
+        rad = pv.stroke_width_six;
         ImageView size_six = (ImageView) findViewById(R.id.paint_size_six);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_six.setAdjustViewBounds(true);
@@ -171,7 +170,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 40;
+        rad = pv.stroke_width_seven;
         ImageView size_seven = (ImageView) findViewById(R.id.paint_size_seven);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_seven.setAdjustViewBounds(true);
@@ -181,7 +180,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
         canvas = new Canvas(workingBitmap);
         canvas.drawColor(Color.WHITE);
 
-        rad = 45;
+        rad = pv.stroke_width_eight;
         ImageView size_eight = (ImageView) findViewById(R.id.paint_size_eight);
         canvas.drawCircle((width / 2), (height / 2), rad, paint);
         size_eight.setAdjustViewBounds(true);
@@ -207,60 +206,48 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.colorbtn_blue:
-                paintView.paint.setColor(Color.BLUE);
-                paintView.color = Color.BLUE;
+                pv.paint.setColor(Color.BLUE);
+                pv.color = Color.BLUE;
                 break;
             case R.id.colorbtn_white:
-                paintView.paint.setColor(Color.WHITE);
-                paintView.color = Color.WHITE;
+                pv.paint.setColor(Color.WHITE);
+                pv.color = Color.WHITE;
                 break;
             case R.id.colorbtn_red:
-                paintView.paint.setColor(Color.RED);
-                paintView.color = Color.RED;
+                pv.paint.setColor(Color.RED);
+                pv.color = Color.RED;
                 break;
             case R.id.colorbtn_green:
-                paintView.paint.setColor(Color.GREEN);
-                paintView.color = Color.GREEN;
+                pv.paint.setColor(Color.GREEN);
+                pv.color = Color.GREEN;
                 break;
             case R.id.colorbtn_yellow:
-                paintView.paint.setColor(Color.YELLOW);
-                paintView.color = Color.YELLOW;
+                pv.paint.setColor(Color.YELLOW);
+                pv.color = Color.YELLOW;
                 break;
             case R.id.paint_del:
-                paintView.clearCanvas();
-                canvas.requestFocus();
-                Tools.pressView(canvas, 100, 100);
+                pv.clearCanvas();
+                pv.invalidate();
+
                 break;
             case R.id.paint_save:
                 saveDrawing();
                 break;
             case R.id.paint_back:
-//                if (PaintView.index_mod < 0) {
-//                    PaintView.index_mod--;
-                if (paintView.points.size() > 0) {
-                    paintView.backPressed = true;
-                    //todo somthing is wrong here // BUG: 12/01/16
-                    if (PaintView.passed) {
-                        paintView.points.remove(paintView.points.size() - 1);
-                        paintView.points.remove(paintView.points.size() - 1);
-                    } else {
-                        paintView.points.remove(paintView.points.size() - 1);
-                        PaintView.passed = false;
-                    }
-//                    canvas.removeAllViews();
-                    paintView.invalidate();
-//                    canvas.addView(paintView);
-
-                    paintView.invalidate();
-                    Toast.makeText(this, String.valueOf(paintView.points.size()), Toast.LENGTH_SHORT).show();
-//                    Tools.pressView(canvas, 1, 1); //todo do the back button and forward
+                if (pv.points.size() > 0) {
+                    pv.invalidate();
+                    pv.points.remove(pv.points.size() - 1);
+                    pv.invalidate();
                 }
-//                Tools.pressView(canvas, 250, 250); //todo do the back button and forward
-//                }
                 break;
             case R.id.paint_forward:
-                if (PaintView.index_mod < 0) {
-                    PaintView.index_mod++;
+                if (pv.points_history.size() >= pv.points.size()) {
+                    pv.invalidate();
+                    try {
+                        pv.points.add(pv.points_history.get(pv.points.size()));
+                    } catch (IndexOutOfBoundsException e) {
+                    }
+                    pv.invalidate();
                 }
                 break;
             default:
@@ -272,36 +259,36 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
     public void setStrokeWidth(View v) {
         switch (v.getId()) {
             case R.id.paint_size_one:
-                paintView.paint.setStrokeWidth(5f);
-                paintView.strokeWidth = 10f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_one);
+                pv.strokeWidth = (float) pv.stroke_width_one;
                 break;
             case R.id.paint_size_two:
-                paintView.paint.setStrokeWidth(10f);
-                paintView.strokeWidth = 20f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_two);
+                pv.strokeWidth = (float) pv.stroke_width_two;
                 break;
             case R.id.paint_size_three:
-                paintView.paint.setStrokeWidth(15f);
-                paintView.strokeWidth = 30f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_three);
+                pv.strokeWidth = (float) pv.stroke_width_three;
                 break;
             case R.id.paint_size_four:
-                paintView.paint.setStrokeWidth(20f);
-                paintView.strokeWidth = 40f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_four);
+                pv.strokeWidth = (float) pv.stroke_width_four;
                 break;
             case R.id.paint_size_five:
-                paintView.paint.setStrokeWidth(25f);
-                paintView.strokeWidth = 50f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_five);
+                pv.strokeWidth = (float) pv.stroke_width_five;
                 break;
             case R.id.paint_size_six:
-                paintView.paint.setStrokeWidth(30f);
-                paintView.strokeWidth = 60f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_six);
+                pv.strokeWidth = (float) pv.stroke_width_six;
                 break;
             case R.id.paint_size_seven:
-                paintView.paint.setStrokeWidth(35f);
-                paintView.strokeWidth = 70f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_seven);
+                pv.strokeWidth = (float) pv.stroke_width_seven;
                 break;
             case R.id.paint_size_eight:
-                paintView.paint.setStrokeWidth(40f);
-                paintView.strokeWidth = 80f;
+                pv.paint.setStrokeWidth((float) pv.stroke_width_seven);
+                pv.strokeWidth = (float) pv.stroke_width_eight;
                 break;
             default:
                 break;
@@ -309,7 +296,7 @@ public class Drawing_Activity extends Activity implements View.OnClickListener {
     }
 
     public void saveDrawing() {
-        Bitmap bitmap = paintView.getBitmap();
+        Bitmap bitmap = pv.getBitmap();
         saveExternal(bitmap);
         Notes_Activity.savedDrawing = true;
         //return to other screen
