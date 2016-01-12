@@ -56,6 +56,10 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/camera.png",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/drawable-hdpi/camera.png"
+    },
+    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_switch_track_mtrl_alpha.9.png"
     },
@@ -120,12 +124,24 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/flag_two.png",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/drawable-hdpi/flag_two.png"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mic_two.png",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/drawable-hdpi/mic_two.png"
+    },
+    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_search_api_mtrl_alpha.png",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/vid.png",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/drawable-hdpi/vid.png"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
@@ -190,5 +206,9 @@
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pencil.png",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/drawable-hdpi/pencil.png"
     }
 ]

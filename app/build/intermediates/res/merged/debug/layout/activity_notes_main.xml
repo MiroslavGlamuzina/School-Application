@@ -26,24 +26,16 @@
             android:id="@+id/notes_lecturetitle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="8"
             android:gravity="center"
             android:text="Untitled Lecture"/>
 
-
-        <Button
-            android:id="@+id/notes_camtoggle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="cam"/>
-
-        <Button
+        <ImageButton
             android:id="@+id/notes_audiotoggle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="aud"/>
+            android:background="@drawable/mic_two"/>
     </LinearLayout>
 
     <LinearLayout
@@ -75,7 +67,7 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="16">
 
         <EditText
             android:id="@+id/notes_et"
@@ -83,8 +75,8 @@
             android:layout_height="match_parent"
             android:layout_weight="6"
             android:focusable="false"
-            android:hint="+Add a Comment"
-            android:text="asasjkhdjkgfajksgdjfkagsjkddd"/>
+            android:hint="+Take a Note"
+            />
 
         <Button
             android:id="@+id/notes_submit"
@@ -93,12 +85,34 @@
             android:layout_weight="2"
             android:text="subt."/>
 
-        <Button
+        <ImageButton
             android:id="@+id/notes_flag"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Flag"/>
+            android:background="@drawable/flag_two"
+            />
+
+        <ImageButton
+            android:id="@+id/notes_draw"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/pencil"/>
+
+        <ImageButton
+            android:id="@+id/notes_camera"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/camera"/>
+
+        <ImageButton
+            android:id="@+id/notes_video"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/vid"/>
     </LinearLayout>
 
 </LinearLayout>

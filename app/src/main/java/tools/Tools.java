@@ -61,7 +61,7 @@ public class Tools {
      */
     public static TableRow.LayoutParams setMargins() {
         TableRow.LayoutParams params = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        params.setMargins(5, 5, 5, 5);
+        params.setMargins(5, 8, 5, 8);
         return params;
     }
 

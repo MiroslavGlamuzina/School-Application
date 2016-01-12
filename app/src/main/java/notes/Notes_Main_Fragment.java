@@ -51,7 +51,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_notes_main, container, false);
-        camtoggle_btn = (Button) rootView.findViewById(R.id.notes_camtoggle);
+        camtoggle_btn = (Button) rootView.findViewById(R.id.notes_camera);
         audio_btn = (Button) rootView.findViewById(R.id.notes_audiotoggle);
         submit_btn = (Button) rootView.findViewById(R.id.notes_submit);
         flag_btn = (Button) rootView.findViewById(R.id.notes_flag);
@@ -277,7 +277,7 @@ public class Notes_Main_Fragment extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.notes_camtoggle:
+            case R.id.notes_camera:
                 if (camtoggle_btn.getText().equals("vid")) {
                     camtoggle_btn.setText("cam");
                     isCamera = true;

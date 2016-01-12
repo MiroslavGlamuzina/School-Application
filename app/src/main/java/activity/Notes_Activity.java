@@ -2,15 +2,20 @@ package activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -21,9 +26,13 @@ import android.widget.Toast;
 import com.example.schoolapp.R;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import database.Database;
+import notes.Notes_Main_Fragment;
 import tools.Entry;
 import tools.Tools;
 
@@ -39,7 +48,8 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
     public static boolean savedDrawing = false;
 
     TextView lecture_title;
-    Button camtoggle_btn, audio_btn, submit_btn, flag_btn;
+    ImageButton camera_btn, video_btn, audio_btn, flag_btn, draw_btn;
+    Button submit_btn;
     EditText note_et;
     ScrollView scroll;
     LinearLayout body;
@@ -48,10 +58,12 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes_main);
-        camtoggle_btn = (Button) this.findViewById(R.id.notes_camtoggle);
-        audio_btn = (Button) this.findViewById(R.id.notes_audiotoggle);
+        camera_btn = (ImageButton) this.findViewById(R.id.notes_camera);
+        audio_btn = (ImageButton) this.findViewById(R.id.notes_audiotoggle);
         submit_btn = (Button) this.findViewById(R.id.notes_submit);
-        flag_btn = (Button) this.findViewById(R.id.notes_flag);
+        flag_btn = (ImageButton) this.findViewById(R.id.notes_flag);
+        video_btn = (ImageButton) this.findViewById(R.id.notes_video);
+        draw_btn = (ImageButton) this.findViewById(R.id.notes_draw);
         body = (LinearLayout) this.findViewById(R.id.notes_body);
         note_et = (EditText) this.findViewById(R.id.notes_et);
         scroll = (ScrollView) this.findViewById(R.id.notes_scrollview);
@@ -61,17 +73,17 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
 //		db.updateTitle("Biology Lecture 1", Tools.getCurrentID());
         lecture_title.setText(db.getTitle(Tools.getCurrentID()));
 
+        draw_btn.setOnClickListener(this);
+        video_btn.setOnClickListener(this);
         flag_btn.setOnClickListener(this);
         submit_btn.setOnClickListener(this);
         audio_btn.setOnClickListener(this);
-        camtoggle_btn.setOnClickListener(this);
+        camera_btn.setOnClickListener(this);
 
         // The following block of code will grab the sorted arraylist from the
         // database to repopulated the page after close..!!!
         // DEBUGGING();
         populateBody();
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
     }
 
     private void DEBUGGING() {
@@ -154,14 +166,14 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
     public void addPhotoElement(Uri imgUri) {
         LinearLayout item = new LinearLayout(this);
         item.setBackgroundColor(Color.BLACK);
-        item.setLayoutParams(Tools.setMargins());
         item.setBackgroundResource(R.drawable.shape);
         TableRow.LayoutParams item_params = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
 //		item_params.gravity =Gravity.RIGHT;
+        item_params.setMargins(5, 8, 5, 8);
         item.setLayoutParams(item_params);
         item.setPadding(-20, 40, -20, 40);
-
+//        item.setPadding(-30, 20, -30, 20);
         ImageView iv = new ImageView(this);
         TableRow.LayoutParams iv_params = new TableRow.LayoutParams(500, 500);
         iv.setLayoutParams(iv_params);
@@ -274,15 +286,6 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.notes_camtoggle:
-                if (camtoggle_btn.getText().equals("vid")) {
-                    camtoggle_btn.setText("cam");
-                    isCamera = true;
-                } else if (camtoggle_btn.getText().equals("cam")) {
-                    camtoggle_btn.setText("vid");
-                    isCamera = false;
-                }
-                break;
             case R.id.notes_audiotoggle:
                 if (isRecording) {
                     isRecording = false;
@@ -296,8 +299,74 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
             case R.id.notes_flag:
                 insertFlag();
                 break;
+            case R.id.notes_draw:
+                Tools.startActivity(this, Drawing_Activity.class); //// completed: 11/01/16
+                break;
+            case R.id.notes_camera:
+//                Tools.startActivity(this, Camera_Capture_Activity.class); // completed: 11/01/16
+                thumbnailCaptureIntent();
+                break;
+            case R.id.notes_video:
+//                    Tools.startActivity(this, ); // FIXME: 11/01/16
+                break;
             default:
                 break;
         }
+    }
+
+    // CAMERA CLASS
+    public static final int REQUEST_CAMERA = 1;
+
+    private void thumbnailCaptureIntent() {
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, REQUEST_CAMERA);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        thumbnailCaptureOnActivityResult(requestCode, resultCode, data);
+    }
+
+    private void thumbnailCaptureOnActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CAMERA) {
+            if (resultCode == RESULT_OK) {
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                saveExternal(photo);
+            } else if (resultCode == RESULT_CANCELED) {
+                // User cancelled the image capture
+            } else {
+                // Image capture failed, advise user
+                //fix: notify if the user is out of internal memory .
+            }
+        }
+    }
+
+    private void saveExternal(Bitmap image) {
+        File pictureFile = saveInternal();
+        if (pictureFile == null) {
+            Log.d("SaveImage(); ", "Error creating media file, check storage permissions: ");// e.getMessage());
+            return;
+        }
+        try {
+            FileOutputStream fos = new FileOutputStream(pictureFile);
+            image.compress(Bitmap.CompressFormat.PNG, 90, fos);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.d("SaveImage(); ", "File not found: " + e.getMessage());
+        } catch (IOException e) {
+            Log.d("SaveImage(); ", "Error accessing file: " + e.getMessage());
+        }
+    }
+
+    public File saveInternal() {
+        ContextWrapper cw = new ContextWrapper(this);
+        File mediaStorageDir = cw.getDir("", Context.MODE_PRIVATE);
+        File mediaFile;
+        String mImageName = Tools.getFileNamePhoto();
+        Database db = new Database(this);
+        db.updatePicture(mImageName, String.valueOf(MainActivity.CURRENT_ID));
+        mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
+        Notes_Main_Fragment.takenPhoto = true;
+        return mediaFile;
     }
 }
