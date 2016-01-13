@@ -78,7 +78,7 @@ public class PaintView extends View implements OnTouchListener {
         paint.setAntiAlias(true);
 
         color = Color.BLUE;
-        strokeWidth = 5f;
+        strokeWidth = stroke_width_three;
     }
 
     @Override

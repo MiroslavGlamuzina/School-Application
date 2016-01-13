@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:2:1-66:12
+ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:2:1-71:12
 	xmlns:android
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:4:5-63
 	package
@@ -19,6 +19,9 @@ uses-sdk
 ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:8:5-10:40
 MERGED from [com.android.support:appcompat-v7:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:10:9-38
@@ -51,9 +54,12 @@ ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/Android
 	android:name
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:19:22-76
 application
-ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:21:5-64:19
+ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:21:5-69:19
 MERGED from [com.android.support:appcompat-v7:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.1.1] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:24:9-41
@@ -121,3 +127,10 @@ ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/Android
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:61:13-45
 	android:name
 		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:60:13-53
+meta-data#com.google.android.gms.version
+ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:65:9-67:68
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:21:9-23:69
+	android:name
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:66:13-58
+	android:value
+		ADDED from /home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/AndroidManifest.xml:67:13-66

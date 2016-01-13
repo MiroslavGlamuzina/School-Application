@@ -11,6 +11,7 @@
     <LinearLayout
         android:id="@+id/notes_header"
         android:layout_width="match_parent"
+        android:background="#FF38356C"
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
@@ -49,7 +50,8 @@
             android:id="@+id/notes_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:animateLayoutChanges="true">
+            android:animateLayoutChanges="true"
+            android:fillViewport="false">
 
             <LinearLayout
                 android:id="@+id/notes_body"
@@ -63,6 +65,7 @@
 
     <LinearLayout
         android:id="@+id/notes_footer"
+        android:background="#FF38356C"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"

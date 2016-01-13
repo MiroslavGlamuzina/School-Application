@@ -84,7 +84,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         // The following block of code will grab the sorted arraylist from the
         // database to repopulated the page after close..!!!
         // DEBUGGING();
-        populateBody();
+        populateBody(populatBodyStartIndex(), populateBodyEndIndex());
     }
 
     private void DEBUGGING() {
@@ -97,30 +97,38 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
         addTextElement(res);
     }
 
-    public void populateBody() {
+    public int populatBodyStartIndex() {
+
+        return 0;
+    }
+
+    public int populateBodyEndIndex() {
+
+        return 20;
+    }
+
+
+    public void populateBody(int start_index, int end_index) {
         body.removeAllViews();
         addAudioElement();// debugging
-        runOnUiThread(new Runnable() {
-                          public void run() {
-                              Database db = new Database(Notes_Activity.this);
-                              ArrayList<Entry> list = Entry.sortEntries(db.getAllFromID("1"));
-                              String note_temp = "";
-                              addTextElement("testing!!");
-                              for (int i = 0; i < list.size(); i++) {
+        Database db = new Database(Notes_Activity.this);
+        ArrayList<Entry> list = Entry.sortEntries(db.getAllFromID("1"));
+        addTextElement("testing!!");
+        for (int i = start_index; i < end_index; i++) {
+            if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
+                addPhotoElement(
+                        Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+            } else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
+                addPhotoElement(
+                        Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
+            } else if (list.get(i).getType().equals(new String(Entry.FLAG))) {
+                addFlagElement();
+            } else if (list.get(i).getType().equals(new String(Entry.NOTE))) {
+                addTextElement(list.get(i).getVal());
+            }
 
-                                  if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
-                                      addPhotoElement(
-                                              Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
-                                  } else if (list.get(i).getType().equals(new String(Entry.DRAWING))) {
-                                      addPhotoElement(
-                                              Uri.fromFile(new File(Tools.getContextWrapperDir(Notes_Activity.this), list.get(i).getVal())));
-                                  } else if (list.get(i).getType().equals(new String(Entry.FLAG))) {
-                                      addFlagElement();
-                                  } else if (list.get(i).getType().equals(new String(Entry.NOTE))) {
-                                      addTextElement(list.get(i).getVal());
-                                  }
-                              }
-                              //// TODO alt
+            //// TODO alt
+//                              String note_temp = "";
 //                    if (list.get(i).getType().equals(new String(Entry.NOTE))) {
 //                        note_temp += list.get(i).getVal() + "\n";
 //                    } else if (list.get(i).getType().equals(new String(Entry.PICTURE))) {
@@ -154,10 +162,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
 //                    e.printStackTrace();
 //                }
 //            }
-                          }
-                      }
-
-        );
+        }
     }
 
     @SuppressLint("NewApi")
@@ -354,7 +359,7 @@ public class Notes_Activity extends Activity implements View.OnClickListener {
             } else {
                 // Image capture failed, advise user
                 //fix: notify if the user is out of internal memory .
-                populateBody();//// FIXME: 11/01/16 -> do a neater adding the layout... consumes too much RAM
+                populateBody(populatBodyStartIndex(), populateBodyEndIndex());//// FIXME: 11/01/16 -> do a neater adding the layout... consumes too much RAM
             }
         }
     }
