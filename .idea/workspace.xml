@@ -31,12 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="207e0f3d-d90e-4247-a7c7-817e2ff44639" name="Default" comment="Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/device-2016-01-11-182502.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/device-2016-01-11-182636.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/device-2016-01-11-182711.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/device-2016-01-12-183710.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/activity/Audio_Activity.java" afterPath="$PROJECT_DIR$/app/src/main/java/activity/Audio_Activity.java" />
+    <list default="true" id="207e0f3d-d90e-4247-a7c7-817e2ff44639" name="Default" comment="Re-commit of previous commit: Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -288,8 +283,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8091873">
-              <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.6183746">
+              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -2832,7 +2827,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452725474417</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Re-commit of previous commit: Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now">
+      <created>1452725758941</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1452725758941</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -2924,7 +2925,8 @@
     <MESSAGE value="Updates to Drawing Activity" />
     <MESSAGE value="Update to the Drawing Activity, &#10;&#10;--Closer in resemblance to Google Keeps drawing note." />
     <MESSAGE value="Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now" />
+    <MESSAGE value="Re-commit of previous commit: Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-commit of previous commit: Update to the drawing activity &#10;&#10;--added bitmap to show which stroke width and color is selected&#10;&#10;-- completed drawing activity for now" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3358,8 +3360,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8091873">
-          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.6183746">
+          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
           <folding />
         </state>
       </provider>

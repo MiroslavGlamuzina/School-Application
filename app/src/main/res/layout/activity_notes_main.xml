@@ -74,7 +74,7 @@
 
         <EditText
             android:id="@+id/notes_et"
-            android:layout_width="0dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_weight="6"
             android:focusable="false"
