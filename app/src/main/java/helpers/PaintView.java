@@ -33,7 +33,6 @@ public class PaintView extends View implements OnTouchListener {
     public static final int stroke_width_six = 35;
     public static final int stroke_width_seven = 40;
     public static final int stroke_width_eight = 45;
-
     //colors
     public static final int paint_color_one = Color.parseColor("#010101");
     public static final int paint_color_two = Color.parseColor("#FD5252");
@@ -42,7 +41,6 @@ public class PaintView extends View implements OnTouchListener {
     public static final int paint_color_five = Color.parseColor("#01AFFD");
     public static final int paint_color_six = Color.parseColor("#D301F7");
     public static final int paint_color_seven = Color.parseColor("#8C6E63");
-
     public static final int paint_color_eight = Color.parseColor("#F8F8F8");
     public static final int paint_color_nine = Color.parseColor("#A42714");
     public static final int paint_color_ten = Color.parseColor("#EC8001");
@@ -50,7 +48,6 @@ public class PaintView extends View implements OnTouchListener {
     public static final int paint_color_twelve = Color.parseColor("#02579A");
     public static final int paint_color_thirteen = Color.parseColor("#8D24A9");
     public static final int paint_color_fourteen = Color.parseColor("#4E342E");
-
     public static final int paint_color_fifteen = Color.parseColor("#8FA3AD");
     public static final int paint_color_sixteen = Color.parseColor("#FD4080");
     public static final int paint_color_seventeen = Color.parseColor("#FD6E40");
@@ -58,7 +55,6 @@ public class PaintView extends View implements OnTouchListener {
     public static final int paint_color_nineteen = Color.parseColor("#304FFC");
     public static final int paint_color_twenty = Color.parseColor("#7B4DFD");
     public static final int paint_color_twenty_one = Color.parseColor("#1DE7B5");
-
     public static final int paint_color_twenty_two = Color.parseColor("#CED6DA");
     public static final int paint_color_twenty_three = Color.parseColor("#F6BACF");
     public static final int paint_color_twenty_four = Color.parseColor("#FDCBBB");
@@ -66,6 +62,7 @@ public class PaintView extends View implements OnTouchListener {
     public static final int paint_color_twenty_six = Color.parseColor("#9EA7D8");
     public static final int paint_color_twenty_seven = Color.parseColor("#D0C3E7");
     public static final int paint_color_twenty_eight = Color.parseColor("#B1DDD9");
+    public static final int paint_color_ERASER = Color.parseColor("#FFFFFF");
 
     public PaintView(Context context) {
         super(context);

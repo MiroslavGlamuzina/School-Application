@@ -31,7 +31,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="207e0f3d-d90e-4247-a7c7-817e2ff44639" name="Default" comment="Taking a Break">
+    <list default="true" id="207e0f3d-d90e-4247-a7c7-817e2ff44639" name="Default" comment="Updates to Drawing Activity">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/eraser.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
@@ -43,6 +44,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_notes_drawing.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_notes_drawing.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -219,56 +222,65 @@
     <favorites_list name="SchoolApp]" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51654214">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="Drawing_Activity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Drawing_Activity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="513" column="19" selection-start-line="513" selection-start-column="19" selection-end-line="513" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#setStrokeSizeImageButton#0;class#Drawing_Activity#0" expanded="false" />
-                    <element signature="method#setStrokeWidth#0;class#Drawing_Activity#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="activity_notes_drawing.xml" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml">
-              <provider editor-type-id="android-designer">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="13" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="PaintView.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/helpers/PaintView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.48073703">
-                  <caret line="82" column="13" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#628#646#0" expanded="true" />
-                    <element signature="e#721#739#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="122" column="45" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Drawing_Activity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Drawing_Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.483871">
+              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+              <folding>
+                <element signature="method#onCreate#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#onClick#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#onClickColor#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#onClickImageHistory#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#onClickToolbar#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#openToolbar#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#setStrokeSizeImageButton#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#setColorImageButton#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#getwidth#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#saveDrawing#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#saveExternal#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#saveInternal#0;class#Drawing_Activity#0" expanded="false" />
+                <element signature="method#onBackPressed#0;class#Drawing_Activity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notes_Activity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Notes_Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41853034">
+              <caret line="125" column="91" selection-start-line="125" selection-start-column="91" selection-end-line="125" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_notes_drawing.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.129032">
+              <caret line="498" column="0" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1860,8 +1872,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tools/Tools.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/activity/Home_Activity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/helpers/PaintView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_notes_drawing.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/activity/Drawing_Activity.java" />
       </list>
     </option>
@@ -1914,7 +1926,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -1946,6 +1958,46 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp]" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp]" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2040,6 +2092,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp]" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2226,7 +2288,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -2238,11 +2300,13 @@
     <property name="start.from.branch" value="master" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="MemoryMonitor.paused" value="false" />
-    <property name="TODO_SCOPE" value="Module 'app'" />
+    <property name="TODO_SCOPE" value="Project Production Files" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.STATE" value="right" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.STATE" value="left" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2695,7 +2759,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452641013819</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updates to Drawing Activity">
+      <created>1452652779206</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1452652779206</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -2704,7 +2774,6 @@
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
       <todo-filter name="WorkInProgress" />
     </todo-panel>
   </component>
@@ -2719,7 +2788,7 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845187" sideWeight="0.4875" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279743" sideWeight="0.5442903" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29689175" sideWeight="0.4903949" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.106723584" sideWeight="0.5223642" order="4" side_tool="true" content_ui="tabs" />
@@ -2728,9 +2797,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.49786553" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3386924" sideWeight="0.50213444" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15314835" sideWeight="0.5274074" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.45570973" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.4429029" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15572916" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29689175" sideWeight="0.5117396" order="6" side_tool="false" content_ui="tabs" x="2910" y="24" width="930" height="1056" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29689175" sideWeight="0.5096051" order="6" side_tool="false" content_ui="tabs" x="2910" y="24" width="930" height="1056" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2785,33 +2854,17 @@
     <MESSAGE value="Updated Notes activity &#10;&#10;--changed main linearlayout population&#10;--fixed bugs&#10;--working well" />
     <MESSAGE value="Done for the day&#10;&#10;updated drawing activity" />
     <MESSAGE value="Taking a Break" />
-    <option name="LAST_COMMIT_MESSAGE" value="Taking a Break" />
+    <MESSAGE value="Updates to Drawing Activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates to Drawing Activity" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Preferences_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/import-summary.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3132,76 +3185,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Notes_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6677315">
-          <caret line="349" column="69" selection-start-line="349" selection-start-column="69" selection-end-line="349" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tools/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.792857">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;field#HASH#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#memoryAvailable#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#setMargins#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileUriDEBUG#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileUri#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileUri#1;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileNameAudio#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileNamePhoto#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileNameDrawing#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getFileNameVideo#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getCurrentID#0;class#Tools#0" expanded="true" />
-            <element signature="e#4710#4711#0" expanded="true" />
-            <element signature="e#4772#4773#0" expanded="true" />
-            <element signature="docComment;method#setCurrentID#0;class#Tools#0" expanded="true" />
-            <element signature="e#4993#4994#0" expanded="true" />
-            <element signature="e#5037#5038#0" expanded="true" />
-            <element signature="docComment;method#setCurrentID#1;class#Tools#0" expanded="true" />
-            <element signature="e#5264#5265#0" expanded="true" />
-            <element signature="e#5325#5326#0" expanded="true" />
-            <element signature="docComment;method#getDateString#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getContextWrapperDir#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getRandomFileNameAbsolute#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#getRandomFileName#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#listAllAudio#0;class#Tools#0" expanded="true" />
-            <element signature="e#8036#8044#0" expanded="true" />
-            <element signature="docComment;method#listAllPicture#0;class#Tools#0" expanded="true" />
-            <element signature="e#8886#8894#0" expanded="true" />
-            <element signature="docComment;method#getAllAudioFiles#0;class#Tools#0" expanded="true" />
-            <element signature="e#9706#9712#0" expanded="true" />
-            <element signature="docComment;method#getAllPhotoFiles#0;class#Tools#0" expanded="true" />
-            <element signature="e#10398#10404#0" expanded="true" />
-            <element signature="docComment;method#deleteDatabase#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#deleteFiles#0;class#Tools#0" expanded="true" />
-            <element signature="docComment;method#backButton#0;class#Tools#0" expanded="true" />
-            <element signature="e#12741#12742#0" expanded="true" />
-            <element signature="e#12836#12837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0473773">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/helpers/PaintView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.48073703">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="13" />
-          <folding>
-            <element signature="e#628#646#0" expanded="true" />
-            <element signature="e#721#739#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3220,14 +3208,21 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Drawing_Activity.java">
+    <entry file="file://$USER_HOME$/android-sdks/sources/android-23/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="513" column="19" selection-start-line="513" selection-start-column="19" selection-end-line="513" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.2713568">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/helpers/PaintView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4947839">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setStrokeSizeImageButton#0;class#Drawing_Activity#0" expanded="false" />
-            <element signature="method#setStrokeWidth#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="e#628#646#0" expanded="true" />
+            <element signature="e#721#739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3237,8 +3232,54 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.129032">
+          <caret line="498" column="0" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Drawing_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.483871">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="method#onCreate#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#onClick#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#onClickColor#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#onClickImageHistory#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#onClickToolbar#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#openToolbar#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#setStrokeSizeImageButton#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#setColorImageButton#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#getwidth#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#saveDrawing#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#saveExternal#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#saveInternal#0;class#Drawing_Activity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#Drawing_Activity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="13" />
+          <caret line="122" column="45" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33226836">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Notes_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41853034">
+          <caret line="125" column="91" selection-start-line="125" selection-start-column="91" selection-end-line="125" selection-end-column="91" />
           <folding />
         </state>
       </provider>
