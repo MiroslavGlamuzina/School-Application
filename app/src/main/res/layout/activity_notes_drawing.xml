@@ -21,31 +21,145 @@
             android:layout_height="match_parent"
             android:layout_gravity="right|center_vertical"
             android:gravity="right|center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="24"
+            >
 
-            <Button
+            <!-- BACK BUTTON-->
+            <LinearLayout
                 android:id="@+id/paint_back"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="back"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:weightSum="6">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backbtn"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+            </LinearLayout>
+
+            <!-- Forward Button -->
+            <LinearLayout
                 android:id="@+id/paint_forward"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="for"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:weightSum="6">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/forwardbtn"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+            </LinearLayout>
+
+            <!-- Trash Button -->
+            <LinearLayout
                 android:id="@+id/paint_del"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="DEL"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:weightSum="6">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/trash"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+            </LinearLayout>
+
+            <!-- Save Button-->
+            <LinearLayout
                 android:id="@+id/paint_save"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="SAV"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/save"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -550,44 +664,148 @@
         <LinearLayout
             android:id="@+id/paint_row_six"
             android:layout_width="match_parent"
-            android:paddingTop="2dp"
             android:layout_height="30dp"
             android:layout_below="@+id/paint_row_five"
             android:background="#eeeeee"
             android:orientation="horizontal"
-            android:weightSum="6">
+            android:padding="0dp"
+            android:weightSum="8">
 
-            <ImageButton
-                android:id="@+id/paint_toolbar_pen"
+            <LinearLayout
+                android:id="@+id/paint_toolbar_eraser_background"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="0dp"
                 android:layout_weight="2"
-                android:background="@drawable/pencil"
-                android:clickable="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:padding="0dp"/>
+                android:background="#eeeeee"
+                android:paddingTop="1dp"
+                android:weightSum="6">
 
-            <ImageButton
-                android:id="@+id/paint_toolbar_eraser"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/paint_toolbar_eraser"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/pro_eraser"
+                    android:clickable="true"
+                    android:padding="15dp"
+                    android:scaleType="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paint_toolbar_pen_background"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="0dp"
                 android:layout_weight="2"
-                android:background="@drawable/eraser"
-                android:clickable="true"
-                android:padding="0dp"/>
+                android:background="#eeeeee"
+                android:paddingTop="1dp">
 
-            <ImageButton
-                android:id="@+id/paint_size_th"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/paint_toolbar_pen"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/pro_sharpie"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="0dp"
+                    android:scaleType="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paint_toolbar_sharpie_background"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="0dp"
                 android:layout_weight="2"
-                android:background="#FFFFFF"
-                android:clickable="true"
-                android:padding="0dp"/>
+                android:background="#eeeeee"
+                android:paddingTop="1dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/paint_toolbar_sharpie"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/pro_marker"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="0dp"
+                    android:scaleType="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paint_toolbar_highlighter_background"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#eeeeee"
+                android:paddingTop="1dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/paint_toolbar_highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/pro_highlighter"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="0dp"
+                    android:scaleType="center"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#ffffff"></LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

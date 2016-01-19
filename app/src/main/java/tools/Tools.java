@@ -7,19 +7,25 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.StatFs;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.webkit.URLUtil;
 import android.widget.TableRow;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 import activity.MainActivity;
 import database.Database;
@@ -32,6 +38,40 @@ public class Tools {
      */
     public static final String HASH = " qwerqwer ";
     public static final String FLAG = " iuoyiouy ";
+
+    public static boolean checkURL(CharSequence input) {
+        if (TextUtils.isEmpty(input)) {
+            return false;
+        }
+        Pattern URL_PATTERN = Patterns.WEB_URL;
+        boolean isURL = URL_PATTERN.matcher(input).matches();
+        if (!isURL) {
+            String urlString = input + "";
+            if (URLUtil.isNetworkUrl(urlString)) {
+                try {
+                    new URL(urlString);
+                    isURL = true;
+                } catch (Exception e) {
+                }
+            }
+        }
+        return isURL;
+    }
+
+    public static String checkURLTypeWebView(String url) {
+        if (url.toString().contains(new String("youtube")) || url.toString().contains(new String("youtu"))) {
+            return "https://www.youtube.com/embed/" + url.toString().split("/")[url.toString().split("/").length - 1];
+        }
+        return url;
+    }
+
+    public static boolean checkURLType(String url) {
+        if (url.toString().contains(new String("youtube")) || url.toString().contains(new String("youtu")) || url.toString().contains(new String(".jpg")) || url.toString().contains(new String(".png")) || url.toString().contains(new String(".gif"))) {
+            return true;
+        }
+        return false;
+    }
+
 
     /**
      * <b>memoryAvailable()</b></br>
@@ -185,6 +225,11 @@ public class Tools {
      */
     public static String getDateString() {
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        return currentDateTimeString;
+    }
+
+    public static String getTimeStamp() {
+        String currentDateTimeString = new SimpleDateFormat("hh:mm:ss").format(new java.util.Date());
         return currentDateTimeString;
     }
 

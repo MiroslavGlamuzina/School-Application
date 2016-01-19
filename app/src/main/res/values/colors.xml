@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#38356c</color>
-    <color name="colorPrimaryDark">#38356c</color>
+    <color name="black">#333061</color>
+    <color name="colorPrimaryDark">#333061</color>
     <color name="colorBackground">#38356c</color>
     <color name="primary_material_light">#38356c</color>
+    <color name="mNavColor">#333061</color>
+    <color name="accent_material_light">#333061</color>
 </resources>

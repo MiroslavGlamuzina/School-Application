@@ -6,45 +6,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="activity.Paint_Activity">
+    tools:context="activity.Notes_Activity">
+
 
     <LinearLayout
         android:id="@+id/notes_header"
         android:layout_width="match_parent"
-        android:background="#FF38356C"
         android:layout_height="0dp"
         android:layout_weight="10"
+        android:background="#2b2954"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
         android:orientation="horizontal"
         android:weightSum="12">
 
-        <Button
+        <LinearLayout
+            android:id="@+id/notes_back_to_home"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="&lt;-"/>
+            android:background="#FF38356C"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/backbtn"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/notes_lecturetitle"
+            style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
-            android:gravity="center"
+            android:background="#FF38356C"
+            android:clickable="true"
+            android:gravity="center_vertical"
             android:text="Untitled Lecture"/>
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/notes_audiotoggle"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/mic_two"/>
+            android:background="#FF38356C"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/mic_two"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="83"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="0dp">
 
         <ScrollView
             android:id="@+id/notes_scrollview"
@@ -65,57 +88,88 @@
 
     <LinearLayout
         android:id="@+id/notes_footer"
-        android:background="#FF38356C"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="7"
+        android:background="#2b2954"
         android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
         android:weightSum="16">
 
-        <EditText
+        <TextView
             android:id="@+id/notes_et"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:focusable="false"
-            android:hint="+Take a Note"
-            />
-
-        <Button
-            android:id="@+id/notes_submit"
+            style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="subt."/>
+            android:layout_weight="8"
+            android:background="#FF38356C"
+            android:focusable="false"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="+Take a Note"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            />
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/notes_flag"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/flag_two"
-            />
+            android:background="#FF38356C"
+            android:padding="8dp">
 
-        <ImageButton
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/flag_two"
+                />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/notes_draw"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/pencil"/>
+            android:background="#FF38356C"
+            android:padding="8dp">
 
-        <ImageButton
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/pencil"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/notes_camera"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/camera"/>
+            android:background="#FF38356C"
+            android:padding="8dp">
 
-        <ImageButton
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/camera"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/notes_video"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/vid"/>
-    </LinearLayout>
+            android:background="#FF38356C"
+            android:padding="8dp">
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/vid"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

@@ -16,12 +16,12 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_lines.xml"
     },
     {
-        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_previouslectures.xml",
-        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_previouslectures.xml"
-    },
-    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_notes_drawing.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_notes_drawing.xml"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_previouslectures.xml",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/src/main/res/layout/activity_previouslectures.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
@@ -76,12 +76,12 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_select_dialog_material.xml"
-    },
-    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/activity_camera.xml",
@@ -128,16 +128,16 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_media_action.xml"
     },
     {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
-        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
@@ -168,12 +168,12 @@
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
-    },
-    {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
     },
     {
         "merged": "/home/miroslav/AndroidStudioProjects/SchoolApp]2/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
