@@ -176,8 +176,8 @@
       <file leaf-file-name="Notes_Activity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Notes_Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3919598">
-              <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6934673">
+              <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
               <folding>
                 <element signature="e#1290#1370#0" expanded="false" />
                 <element signature="e#3388#3458#0" expanded="false" />
@@ -2876,7 +2876,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453179813373</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Updated Notes, Drawing, Tools Activites">
+      <created>1453179817949</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1453179817949</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -3402,8 +3408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/activity/Notes_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3919598">
-          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.6934673">
+          <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
           <folding>
             <element signature="e#1290#1370#0" expanded="false" />
             <element signature="e#3388#3458#0" expanded="false" />
